@@ -25,54 +25,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --font-size-base: 1.25rem;
-        }
-        @media (min-width: 640px) {
-            :root { --font-size-base: 1.5rem; }
-        }
+        :root { --font-size-base: 1.25rem; }
+        @media (min-width: 640px) { :root { --font-size-base: 1.5rem; } }
+        
         body {
             font-family: 'Amiri', serif;
             transition: background-color 0.3s, color 0.3s;
             -webkit-tap-highlight-color: transparent;
         }
-        .ui-font {
-            font-family: 'Inter', sans-serif;
-        }
+        .ui-font { font-family: 'Inter', sans-serif; }
         .arabic-text {
             font-size: var(--font-size-base);
             line-height: 2.3;
             transition: font-size 0.3s;
             word-wrap: break-word;
         }
-        .dark-mode {
-            background-color: #0f172a;
-            color: #f1f5f9;
-        }
-        .dark-mode .paper {
-            background-color: #1e293b;
-            color: #f8fafc;
-            border-color: #334155;
-        }
-        
-        .text-pure-black {
-            color: #000000 !important;
-        }
-        .dark-mode .text-pure-black {
-            color: #f8fafc !important; 
-        }
+        .text-pure-black { color: #000000 !important; }
+        .dark-mode { background-color: #0f172a; color: #f1f5f9; }
+        .dark-mode .paper { background-color: #1e293b; color: #f8fafc; border-color: #334155; }
+        .dark-mode .text-pure-black { color: #f8fafc !important; }
 
         #landing-page {
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.98)), 
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.98)), 
                               url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
         }
-        @media (min-width: 1024px) {
-            #landing-page { background-attachment: fixed; }
-        }
-        
+        @media (min-width: 1024px) { #landing-page { background-attachment: fixed; } }
         .dark-mode #landing-page {
             background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98)), 
                               url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000');
@@ -82,32 +62,20 @@
             background-color: #f8fafc;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2316a34a' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83-2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
-        
         .dark-mode.bg-islamic-pattern {
             background-color: #0f172a;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2334d399' fill-opacity='0.03'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83-2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
-        .divider-ornament {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 3rem 0;
-            opacity: 0.4;
-        }
-        .divider-ornament::before, .divider-ornament::after {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #d97706, transparent);
-        }
-        .divider-symbol {
-            margin: 0 1rem;
-            color: #d97706;
-            font-size: 1.5rem;
-        }
+        .divider-ornament { display: flex; align-items: center; justify-content: center; margin: 3rem 0; opacity: 0.4; }
+        .divider-ornament::before, .divider-ornament::after { content: ""; flex: 1; height: 1px; background: linear-gradient(to right, transparent, #d97706, transparent); }
+        .divider-symbol { margin: 0 1rem; color: #d97706; font-size: 1.5rem; }
 
-        /* Toast Offline Notification */
+        /* Modal PWA Guide */
+        #pwa-modal { display: none; }
+        #pwa-modal.active { display: flex; }
+        
+        /* Toast Notifications */
         #offline-ready-toast {
             position: fixed;
             bottom: 24px;
@@ -125,11 +93,8 @@
             gap: 10px;
             white-space: nowrap;
         }
-        #offline-ready-toast.show {
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Status Koneksi */
+        #offline-ready-toast.show { transform: translateX(-50%) translateY(0); }
+        
         #connection-status {
             position: fixed;
             top: 0;
@@ -140,17 +105,15 @@
             font-size: 10px;
             z-index: 60;
             display: none;
+            background: #ef4444;
+            color: white;
         }
     </style>
 </head>
 <body class="bg-islamic-pattern text-slate-900 transition-colors duration-300 min-h-screen">
 
-    <!-- Connection Status Bar -->
-    <div id="connection-status" class="bg-red-500 text-white ui-font font-bold">
-        MODE OFFLINE - Internet Terputus
-    </div>
+    <div id="connection-status" class="ui-font font-bold">MODE OFFLINE - Internet Terputus</div>
 
-    <!-- Toast Notification -->
     <div id="offline-ready-toast" class="ui-font text-sm font-semibold">
         <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
         Aplikasi Siap Digunakan Tanpa Internet!
@@ -161,10 +124,9 @@
         
         <!-- Header Controls -->
         <div class="w-full max-w-5xl flex justify-between mb-8 relative z-20" dir="ltr">
-            <!-- PWA Install Button -->
-            <button id="pwa-install-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
+            <button id="install-trigger-btn" class="flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                <span>Instal Aplikasi</span>
+                <span>Instal App</span>
             </button>
 
             <button onclick="toggleDarkMode()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700 ml-auto">
@@ -173,48 +135,48 @@
             </button>
         </div>
 
-        <div class="w-full max-w-3xl text-center mb-10 relative z-20 px-2">
+        <div class="w-full max-w-3xl text-center mb-10 relative z-20">
             <div class="flex justify-center mb-6">
+                <!-- Gunakan onerror handler untuk menampilkan placeholder yang estetik jika file gambar tidak ditemukan di lingkungan pratinjau -->
                 <img src="image_355983.png" alt="Logo RF" class="h-28 sm:h-40 object-contain drop-shadow-2xl" onerror="this.onerror=null; this.outerHTML='<div class=\'w-24 h-24 sm:w-32 sm:h-32 bg-emerald-100/80 dark:bg-emerald-900/80 backdrop-blur rounded-full flex items-center justify-center mx-auto border-4 border-white dark:border-slate-800 shadow-xl\'><span class=\'text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-emerald-300 ui-font\'>RF</span></div>';">
             </div>
-            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Koleksi Kitab & Sholawat</h1>
+            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Bashairul Khairat</h1>
             <p class="text-slate-700 dark:text-slate-200 ui-font text-base sm:text-xl font-semibold bg-white/40 dark:bg-black/20 inline-block px-5 py-1.5 rounded-full backdrop-blur-sm shadow-sm mb-3">Pondok Pesantren Raden Fatah</p>
             <p class="text-amber-700 dark:text-amber-500 ui-font text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">BATURSARI - TALUN - PEKALONGAN</p>
         </div>
 
-        <div class="w-full max-w-5xl flex justify-center relative z-20 px-2">
-            <div class="w-full max-w-md bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border-t-8 border-emerald-700 flex flex-col justify-between transform transition duration-300 group">
-                <div class="absolute top-0 right-0 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-3 py-1 rounded-bl-lg z-10 tracking-widest uppercase">Tersedia</div>
-                <div class="mt-4">
-                    <h2 class="arabic-text text-4xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-4 text-center leading-normal">بشائر الخيرات</h2>
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center ui-font">Basyairul Khoirot</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Kumpulan sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Shalawat Kubro.</p>
-                </div>
-                <button onclick="openReader()" class="w-full ui-font bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 touch-manipulation active:scale-[0.98]">
-                    <span>Baca Sekarang</span>
-                    <svg class="w-5 h-5 ml-1 transform transition group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                </button>
+        <!-- Main Card -->
+        <div class="w-full max-w-md bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border-t-8 border-emerald-700 flex flex-col justify-between transform transition duration-300 relative">
+            <div class="absolute top-0 right-0 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-3 py-1 rounded-bl-lg z-10 tracking-widest uppercase">Kitab Lengkap</div>
+            <div class="mt-4">
+                <h2 class="arabic-text text-4xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-4 text-center leading-normal">بشائر الخيرات</h2>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center ui-font">Basyairul Khoirot</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Sholawat Kubro.</p>
             </div>
+            <button onclick="openReader()" class="w-full ui-font bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 active:scale-95">
+                <span>Mulai Membaca</span>
+                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </button>
         </div>
 
-        <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs relative z-20 opacity-80">
-            <p>© 2026 PP. Raden Fatah Pekalongan | Aplikasi Offline Aktif</p>
+        <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">
+            <p>© 2026 PP. Raden Fatah Pekalongan | PWA Offline Supported</p>
         </footer>
     </div>
 
     <!-- Reader Page -->
     <div id="reader-page" class="hidden relative z-10 overflow-x-hidden">
         <nav dir="ltr" class="ui-font fixed top-0 w-full bg-emerald-800 text-white p-2.5 sm:p-3 shadow-lg z-50 flex justify-between items-center border-b-4 border-amber-500">
-            <div class="font-bold text-base sm:text-lg pl-2 sm:pl-4 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">Basyairul Khoirot</div>
+            <div class="font-bold text-base sm:text-lg pl-2 sm:pl-4">Basyairul Khoirot</div>
             <div class="flex items-center space-x-1 sm:space-x-2">
-                <button onclick="openLandingPage()" class="p-2 bg-emerald-900 hover:bg-emerald-700 rounded-lg transition touch-manipulation" title="Beranda">
+                <button onclick="openLandingPage()" class="p-2 bg-emerald-900 hover:bg-emerald-700 rounded-lg transition" title="Beranda">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                 </button>
                 <div class="flex bg-emerald-700 rounded-lg overflow-hidden border border-emerald-600">
-                    <button onclick="changeFontSize(-1)" class="px-3 py-2 hover:bg-emerald-600 transition border-r border-emerald-600 font-bold">A-</button>
+                    <button onclick="changeFontSize(-1)" class="px-3 py-2 hover:bg-emerald-600 transition font-bold border-r border-emerald-600">A-</button>
                     <button onclick="changeFontSize(1)" class="px-3 py-2 hover:bg-emerald-600 transition font-bold">A+</button>
                 </div>
-                <button onclick="toggleDarkMode()" class="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition touch-manipulation">
+                <button onclick="toggleDarkMode()" class="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition">
                     <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                     <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 </button>
@@ -223,29 +185,18 @@
 
         <div class="pt-20 sm:pt-28 px-3 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-10">
             <div class="paper bg-white rounded-2xl shadow-2xl p-5 sm:p-12 border border-slate-200 transition-colors duration-300 relative overflow-hidden">
-                
-                <div class="absolute top-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-amber-500 opacity-[0.05] rounded-br-full pointer-events-none"></div>
-                <div class="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-amber-500 opacity-[0.05] rounded-bl-full pointer-events-none"></div>
-
                 <div class="text-center border-b-2 border-amber-500 pb-8 mb-10">
-                    <h1 class="text-2xl sm:text-4xl font-bold text-emerald-900 dark:text-emerald-400 leading-tight mb-2">معهد الإسلامي رادين فتاح</h1>
-                    <h2 class="text-3xl sm:text-5xl font-bold text-amber-600 dark:text-amber-500 leading-tight mb-4 mt-4 sm:mt-6">بشائر الخيرات وبلوغ المسرات</h2>
-                    <h3 class="text-xl sm:text-3xl font-semibold text-emerald-700 dark:text-emerald-300 leading-normal mb-6">مع الصلوات الكبرى</h3>
-                    <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 ui-font text-center" dir="ltr">
-                        <p class="font-bold text-sm sm:text-lg text-slate-800 dark:text-slate-200 tracking-wide uppercase">PP. RADEN FATAH</p>
-                        <p class="text-amber-600 dark:text-amber-500 text-xs sm:text-sm font-semibold mt-1 uppercase">Batursari - Talun - Pekalongan</p>
-                    </div>
+                    <h1 class="text-2xl sm:text-4xl font-bold text-emerald-900 dark:text-emerald-400 leading-tight">معهد الإسلامي رادين فتاح</h1>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-amber-600 dark:text-amber-500 leading-tight mb-4 mt-6">بشائر الخيرات وبلوغ المسرات</h2>
+                    <h3 class="text-xl sm:text-3xl font-semibold text-emerald-700 dark:text-emerald-300">مع الصلوات الكبرى</h3>
                 </div>
 
-                <div class="text-center mb-10">
-                    <p class="arabic-text font-bold text-3xl sm:text-4xl text-amber-600 dark:text-amber-500">بسم الله الرحمن الرحيم</p>
-                </div>
-
+                <!-- Bashairul Khairat -->
                 <div class="space-y-10 arabic-text text-justify text-pure-black">
                     <p>۱ - الحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُؤْمِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الْمُؤْمِنِينَ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ</p>
                     <p>٢ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلذَّاكِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَاذْكُرُونِي أَذْكُرْكُمْ اذْكُرُوا اللهَ ذِكْرًا كَثِيرًا وَسَبِّحُوهُ بُكْرَةً وَأَصِيلًا هُوَ الَّذِي يُصَلِّي عَلَيْكُمْ وَمَلَائِكَتُهُ لِيُخْرِجَكُمْ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا تَحِيَّتُهُمْ يَوْمَ يَلْقَوْنَهُ سَلَامٌ وَأَعَدَّ لَهُمْ أَجْرًا كَرِيمًا</p>
                     <p>٣ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْعَامِلِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : أَنِّي لَا أُضِيعُ عَمَلَ عَامِلٍ مِنْكُمْ مِنْ ذَكَرٍ أَوْ أُنْثَى . وَمَنْ عَمِلَ صَالِحًا مِنْ ذَكَرٍ أَوْ أُنْثَى وَهُوَ مُؤْمِنٌ فَأُولَئِكَ يَدْخُلُوْنَ الْجَنَّةَ يُرْزَقُوْنَ فِيهَا بِغَيْرِ حِسَابٍ .</p>
-                    <p>٤ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْأَوَّابِينَ bِمَا قَالَ اللهُ الْعَظِيمُ : فَإِنَّهُ كَانَ لِلْأَوَّابِينَ غَفُوْرًا لَهُمْ مَا يَشَاؤُنَ عِنْدَ رَبِّهِمْ ذَلِكَ جَزَاءُ الْمُحْسِنِينَ</p>
+                    <p>٤ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْأَوَّابِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَإِنَّهُ كَانَ لِلْأَوَّابِينَ غَفُوْرًا لَهُمْ مَا يَشَاؤُنَ عِنْدَ رَبِّهِمْ ذَلِكَ جَزَاءُ الْمُحْسِنِينَ</p>
                     <p>٥ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلتَّوَّابِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّ اللهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ وَهُوَ الَّذِي يَقْبَلُ التَّوْبَةَ عَنْ عِبَادِهِ وَيَعْفُو عَنِ السَّيِّئَاتِ .</p>
                     <p>٦ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُخْلِصِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَمَنْ كَانَ يَرْجُو لِقَاءَ رَبِّهِ فَلْيَعْمَلْ عَمَلًا صَالِحًا وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا ، مُخْلِصِينَ لَهُ الدِّينَ</p>
                     <p>٧ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْمُصَلِّينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَقِمِ الصَّلَاةَ إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنْكَرِ ، أَقِمِ الصَّلاةَ وَأْمُرْ بِالْمَعْرُوْفِ وَانْهَ عَنِ الْمُنْكَرِ وَاصْبِرْ عَلَى مَا أَصَابَكَ إِنَّ ذَلِكَ مِنْ عَزْمِ الْأُمُوْرِ</p>
@@ -275,13 +226,10 @@
                     <p>٣١- اللهُمَّ صَلِّ عَلَيْهِ صَلَاةً تُشْرَحُ بِهَا الصُّدُورُ وَتَهُوْنُ بِهَا الْأُمُورُ وَتَنْكَشِفُ بِهَا السُّتُوْرُ وَسَلَّمْ تَسْلِيمًا كَثِيرًا دَائِمًا إِلَى يَوْمِ الدِّينِ دَعْوَاهُمْ فِيهَا سُبْحَانَكَ اللَّهُمَّ وَتَحِيَّتُهُمْ فِيهَا سَلَامٌ وَآخِرُ دَعْوَاهُمْ أَنِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
                 </div>
 
-                <div class="divider-ornament">
-                    <span class="divider-symbol">❦</span>
-                </div>
+                <div class="divider-ornament"><span class="divider-symbol">❦</span></div>
 
-                <!-- Bagian Shalawat Kubro LENGKAP -->
                 <div class="text-center mb-10">
-                    <h3 class="text-3xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-2 drop-shadow-sm">الصلوات الكبرى</h3>
+                    <h3 class="text-3xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-2">الصلوات الكبرى</h3>
                     <div class="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
                 </div>
                 
@@ -293,7 +241,7 @@
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْقَاعِدِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ السَّاجِدِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الذَّاكِرِينَ</p>
-                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ sَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُكَبِّرِيْنَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُكَبِّرِيْنَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الطَّاهِرِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الظَّاهِرِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الشَّاهِدِينَ</p>
@@ -323,7 +271,7 @@
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا قُرَشِيُّ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا هَاشِمِيُّ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا أَبْطَحِيُّ</p>
-                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ sَلَامٍ عَلَيْكَ يَا زَمْزَمِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا زَمْزَمِيُّ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا تِهَامِيُّ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا أُمِّيُّ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ وَلَدِ آدَمَ</p>
@@ -344,9 +292,7 @@
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا نَبِيَّ اللهِ إِلَى يَوْمِ الدِّينِ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
                 </div>
 
-                <div class="divider-ornament">
-                    <span class="divider-symbol">❦</span>
-                </div>
+                <div class="divider-ornament"><span class="divider-symbol">❦</span></div>
 
                 <div class="space-y-12">
                     <div class="py-4">
@@ -361,12 +307,14 @@
                         <p class="arabic-text text-center text-pure-black">
                             اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطعتُ. أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.
                         </p>
+                        <p class="text-left text-xs text-amber-600 dark:text-amber-500 mt-4 font-semibold" dir="ltr">رواه البخاري</p>
                     </div>
 
                     <div class="space-y-6 arabic-text text-center text-pure-black border-t border-slate-100 dark:border-slate-700 pt-8">
                         <p>أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّمَا خَلَقَ. ×٣</p>
-                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهو السَّمِيعُ الْعَلِيمُ ×٣</p>
+                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ×٣</p>
                         <p>يَا لَطِيْفَا بِخَلْقِهِ يَا عَلِيْمًا بِخَلْقِهِ يَا خَبِيْرًا بِخَلْقِهِ الْطُفْ بِنَا يَا لَطِيْفُ يَا عَلِيمُ يَا خَبِيْرُ. ×٣</p>
+                        <p>يَا لَطِيفًا لَمْ يَزَلْ الْطُفْ بِنَا فِيْمَانَزَلْ إِنَّكَ لَطِيفٌ لَمْ تَزَلْ أُلْطُفْ بِنَا وَالْمُسْلِمِينَ. ×٣</p>
                     </div>
 
                     <div class="py-8 border-t border-slate-100 dark:border-slate-700">
@@ -391,130 +339,90 @@
         </div>
     </div>
 
-    <!-- Logic JS -->
+    <!-- PWA Install Guide Modal -->
+    <div id="pwa-modal" class="fixed inset-0 bg-black/80 z-[100] items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-6 max-w-sm w-full ui-font text-center">
+            <h3 class="text-xl font-bold text-emerald-800 mb-4">Instal Aplikasi</h3>
+            <p id="pwa-guide-text" class="text-slate-600 mb-6 text-sm">Ketuk menu browser dan pilih "Instal" atau "Tambahkan ke Layar Utama" untuk akses offline.</p>
+            <button onclick="document.getElementById('pwa-modal').classList.remove('active')" class="w-full bg-emerald-700 text-white font-bold py-3 rounded-xl">Tutup</button>
+        </div>
+    </div>
+
     <script>
-        // 1. DYNAMIC MANIFEST
-        const manifestData = {
-            "name": "Basyairul Khoirot Digital",
+        // 1. GENERATE DYNAMIC MANIFEST
+        const manifest = {
+            "name": "Basyairul Khoirot - PP Raden Fatah",
             "short_name": "Basyairul",
-            "start_url": window.location.pathname,
+            "start_url": window.location.href,
             "display": "standalone",
             "background_color": "#f8fafc",
             "theme_color": "#065f46",
-            "orientation": "portrait",
             "icons": [
                 { "src": "image_355983.png", "sizes": "192x192", "type": "image/png" },
                 { "src": "image_355983.png", "sizes": "512x512", "type": "image/png" }
             ]
         };
-        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+        const manifestStr = JSON.stringify(manifest);
+        const manifestBlob = new Blob([manifestStr], {type: 'application/json'});
         document.getElementById('pwa-manifest').setAttribute('href', URL.createObjectURL(manifestBlob));
 
-        // 2. ROBUST SERVICE WORKER
+        // 2. SERVICE WORKER FOR OFFLINE
         if ('serviceWorker' in navigator) {
             const swCode = `
-                const CACHE_NAME = 'basyairul-v5';
-                const ASSETS = [
-                    '/', 
-                    location.href,
-                    'https://cdn.tailwindcss.com',
-                    'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000'
-                ];
-
+                const CACHE_NAME = 'basyairul-v6';
                 self.addEventListener('install', (e) => {
-                    e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(ASSETS)));
+                    e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(['/'])));
                     self.skipWaiting();
                 });
-
                 self.addEventListener('fetch', (e) => {
-                    // Serve from cache first, then network
-                    e.respondWith(
-                        caches.match(e.request).then(res => {
-                            return res || fetch(e.request).then(netRes => {
-                                return caches.open(CACHE_NAME).then(cache => {
-                                    cache.put(e.request, netRes.clone());
-                                    return netRes;
-                                });
-                            });
-                        }).catch(() => caches.match(location.href))
-                    );
+                    e.respondWith(caches.match(e.request).then(res => res || fetch(e.request)));
                 });
             `;
-            
             const swBlob = new Blob([swCode], {type: 'application/javascript'});
-            navigator.serviceWorker.register(URL.createObjectURL(swBlob))
-                .then(() => {
-                    setTimeout(() => {
-                        const toast = document.getElementById('offline-ready-toast');
-                        toast.classList.add('show');
-                        setTimeout(() => toast.classList.remove('show'), 5000);
-                    }, 4000);
-                }).catch(err => console.log("Offline mode requires HTTPS server."));
+            navigator.serviceWorker.register(URL.createObjectURL(swBlob)).then(() => {
+                setTimeout(() => {
+                    document.getElementById('offline-ready-toast').classList.add('show');
+                    setTimeout(() => document.getElementById('offline-ready-toast').classList.remove('show'), 5000);
+                }, 2000);
+            }).catch(err => console.log("HTTPS required for PWA features."));
         }
 
-        // 3. MONITOR CONNECTION
-        window.addEventListener('online', () => {
-            document.getElementById('connection-status').style.display = 'none';
-        });
-        window.addEventListener('offline', () => {
-            document.getElementById('connection-status').style.display = 'block';
-        });
-
-        // 4. INSTALL LOGIC
+        // 3. INSTALLATION LOGIC
         let deferredPrompt;
-        const installBtn = document.getElementById('pwa-install-btn');
+        const triggerBtn = document.getElementById('install-trigger-btn');
+        const pwaModal = document.getElementById('pwa-modal');
+        const guideText = document.getElementById('pwa-guide-text');
 
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            installBtn.classList.remove('hidden');
         });
 
-        installBtn.addEventListener('click', async () => {
+        triggerBtn.onclick = async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') installBtn.classList.add('hidden');
-                deferredPrompt = null;
+                if (outcome === 'accepted') deferredPrompt = null;
+            } else {
+                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                if (isIOS) {
+                    guideText.innerText = 'Di iPhone: Ketuk ikon "Bagikan" (panah ke atas) di bawah, lalu pilih "Tambah ke Layar Utama".';
+                } else {
+                    guideText.innerText = 'Buka menu browser (titik tiga) dan pilih "Instal Aplikasi" atau "Tambahkan ke Layar Utama".';
+                }
+                pwaModal.classList.add('active');
             }
-        });
+        };
 
-        // 5. NAVIGATION & UI
+        // UI NAVIGATION
         let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
         let isDarkMode = false;
-
-        function openReader() {
-            document.getElementById('landing-page').classList.add('hidden');
-            document.getElementById('reader-page').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function openLandingPage() {
-            document.getElementById('reader-page').classList.add('hidden');
-            document.getElementById('landing-page').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function changeFontSize(step) {
-            currentFontSize += step * 0.15;
-            if (currentFontSize < 1.0) currentFontSize = 1.0;
-            if (currentFontSize > 3.5) currentFontSize = 3.5;
-            document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'rem');
-        }
-
-        function toggleDarkMode() {
-            isDarkMode = !isDarkMode;
-            const body = document.body;
-            if (isDarkMode) {
-                body.classList.add('dark-mode');
-                document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.add('hidden'));
-                document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.remove('hidden'));
-            } else {
-                body.classList.remove('dark-mode');
-                document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.remove('hidden'));
-                document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.add('hidden'));
-            }
-        }
+        function openReader() { document.getElementById('landing-page').classList.add('hidden'); document.getElementById('reader-page').classList.remove('hidden'); window.scrollTo(0,0); }
+        function openLandingPage() { document.getElementById('reader-page').classList.add('hidden'); document.getElementById('landing-page').classList.remove('hidden'); window.scrollTo(0,0); }
+        function changeFontSize(step) { currentFontSize = Math.min(Math.max(currentFontSize + step * 0.15, 1.0), 3.5); document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'rem'); }
+        function toggleDarkMode() { isDarkMode = !isDarkMode; document.body.classList.toggle('dark-mode'); document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.toggle('hidden', isDarkMode)); document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.toggle('hidden', !isDarkMode)); }
+        window.ononline = () => document.getElementById('connection-status').style.display = 'none';
+        window.onoffline = () => document.getElementById('connection-status').style.display = 'block';
     </script>
 </body>
 </html>

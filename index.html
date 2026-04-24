@@ -108,7 +108,8 @@
         
         <!-- Header Controls -->
         <div class="w-full max-w-5xl flex justify-between mb-8 relative z-20" dir="ltr">
-            <button id="install-trigger-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
+            <!-- PWA Install Button: Sekarang selalu terlihat -->
+            <button id="install-trigger-btn" class="flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 <span>Instal App</span>
             </button>
@@ -123,7 +124,7 @@
             <div class="flex justify-center mb-6">
                 <img src="image_355983.png" alt="Logo RF" class="h-28 sm:h-40 object-contain drop-shadow-2xl" onerror="this.onerror=null; this.outerHTML='<div class=\'w-24 h-24 sm:w-32 sm:h-32 bg-emerald-100/80 dark:bg-emerald-900/80 backdrop-blur rounded-full flex items-center justify-center mx-auto border-4 border-white dark:border-slate-800 shadow-xl\'><span class=\'text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-emerald-300 ui-font\'>RF</span></div>';">
             </div>
-            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Kumpulan Kitab & Sholawat</h1>
+            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Bashairul Khairat</h1>
             <p class="text-slate-700 dark:text-slate-200 ui-font text-base sm:text-xl font-semibold bg-white/40 dark:bg-black/20 inline-block px-5 py-1.5 rounded-full backdrop-blur-sm shadow-sm mb-3">Pondok Pesantren Raden Fatah</p>
             <p class="text-amber-700 dark:text-amber-500 ui-font text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">BATURSARI - TALUN - PEKALONGAN</p>
         </div>
@@ -143,7 +144,7 @@
         </div>
 
         <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">
-            <p>© 2026 PP. Raden Fatah Pekalongan | Santri Kalong</p>
+            <p>© 2026 PP. Raden Fatah Pekalongan | PWA Offline Supported</p>
         </footer>
     </div>
 
@@ -362,7 +363,8 @@
         // Pastikan Anda membuat file sw.js di folder root Github/Vercel Anda.
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js').then(registration => {
+                // Di sini kita meregistrasi file 'sw.js' beneran, bukan Virtual Blob lagi.
+                navigator.serviceWorker.register('/sw.js').then(registration => {
                     console.log('SW terdaftar: ', registration.scope);
                 }).catch(error => {
                     console.log('SW Gagal. Pastikan file sw.js ada di repositori Anda.', error);
@@ -379,7 +381,6 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
-            triggerBtn.classList.remove('hidden'); // Tampilkan tombol instal jika didukung otomatis
         });
 
         triggerBtn.addEventListener('click', async () => {
@@ -388,13 +389,14 @@
                 const { outcome } = await deferredPrompt.userChoice;
                 if (outcome === 'accepted') {
                     deferredPrompt = null;
-                    triggerBtn.classList.add('hidden');
+                    // Opsional: sembunyikan tombol jika sudah berhasil diinstal
+                    // triggerBtn.classList.add('hidden'); 
                 }
             } else {
-                // Tampilkan Modal Petunjuk Manual
+                // Tampilkan Modal Petunjuk Manual jika prompt otomatis tidak tersedia
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 if (isIOS) {
-                    guideText.innerText = 'Di iPhone: Ketuk ikon "Bagikan" (panah ke atas) di bawah, lalu pilih "Tambah ke Layar Utama".';
+                    guideText.innerText = 'Di iPhone/iPad: Ketuk ikon "Bagikan" (panah ke atas) di bawah, lalu pilih "Tambah ke Layar Utama".';
                 } else {
                     guideText.innerText = 'Buka menu browser (titik tiga) di pojok kanan atas dan pilih "Instal Aplikasi" atau "Tambahkan ke Layar Utama".';
                 }

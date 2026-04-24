@@ -94,25 +94,9 @@
             white-space: nowrap;
         }
         #offline-ready-toast.show { transform: translateX(-50%) translateY(0); }
-        
-        #connection-status {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: 4px;
-            text-align: center;
-            font-size: 10px;
-            z-index: 60;
-            display: none;
-            background: #ef4444;
-            color: white;
-        }
     </style>
 </head>
 <body class="bg-islamic-pattern text-slate-900 transition-colors duration-300 min-h-screen">
-
-    <div id="connection-status" class="ui-font font-bold">MODE OFFLINE - Internet Terputus</div>
 
     <div id="offline-ready-toast" class="ui-font text-sm font-semibold">
         <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -124,7 +108,7 @@
         
         <!-- Header Controls -->
         <div class="w-full max-w-5xl flex justify-between mb-8 relative z-20" dir="ltr">
-            <button id="install-trigger-btn" class="flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
+            <button id="install-trigger-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                 <span>Instal App</span>
             </button>
@@ -137,10 +121,9 @@
 
         <div class="w-full max-w-3xl text-center mb-10 relative z-20">
             <div class="flex justify-center mb-6">
-                <!-- Gunakan onerror handler untuk menampilkan placeholder yang estetik jika file gambar tidak ditemukan di lingkungan pratinjau -->
                 <img src="image_355983.png" alt="Logo RF" class="h-28 sm:h-40 object-contain drop-shadow-2xl" onerror="this.onerror=null; this.outerHTML='<div class=\'w-24 h-24 sm:w-32 sm:h-32 bg-emerald-100/80 dark:bg-emerald-900/80 backdrop-blur rounded-full flex items-center justify-center mx-auto border-4 border-white dark:border-slate-800 shadow-xl\'><span class=\'text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-emerald-300 ui-font\'>RF</span></div>';">
             </div>
-            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Bashairul Khairat</h1>
+            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Kumpulan Kitab & Sholawat</h1>
             <p class="text-slate-700 dark:text-slate-200 ui-font text-base sm:text-xl font-semibold bg-white/40 dark:bg-black/20 inline-block px-5 py-1.5 rounded-full backdrop-blur-sm shadow-sm mb-3">Pondok Pesantren Raden Fatah</p>
             <p class="text-amber-700 dark:text-amber-500 ui-font text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">BATURSARI - TALUN - PEKALONGAN</p>
         </div>
@@ -160,7 +143,7 @@
         </div>
 
         <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs">
-            <p>© 2026 PP. Raden Fatah Pekalongan | PWA Offline Supported</p>
+            <p>© 2026 PP. Raden Fatah Pekalongan | Santri Kalong</p>
         </footer>
     </div>
 
@@ -209,7 +192,7 @@
                     <p>١٤ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْكَاظِمِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ . فَمَنْ عَفَا وَأَصْلَحَ فَأَجْرُهُ عَلَى اللَّهِ إِنَّهُ لَا يُحِبُّ الظَّالِمِينَ .</p>
                     <p>١٥ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُحْسِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَحْسِنُوا إِنَّ اللهَ يُحِبُّ الْمُحْسِنِينَ . مَنْ جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا وَمَنْ جَاءَ بِالسَّيِّئَةِ فَلَا يُجْزَى إِلَّا مِثْلَهَا وَهُمْ لَا يُظْلَمُوْنَ</p>
                     <p>١٦ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْمُتَصَدِّقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَنْ تَصَدَّقُوْا خَيْرٌ لَكُمْ إِنْ كُنْتُمْ تَعْلَمُوْنَ . إِنَّ اللَّهَ يَجْزِى الْمُتَصَدِّقِينَ</p>
-                    <p>١٧ - اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُنْفِقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُوْنَ . وَمَا أَنْفَقْتُمْ مِنْ شَيْءٍ فَهو يُخْلِفُهُ .</p>
+                    <p>١٧ - اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُنْفِقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُوْنَ . وَمَا أَنْفَقْتُمْ مِنْ شَيْءٍ فَهُوَ يُخْلِفُهُ .</p>
                     <p>١٨- اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلشَّاكِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَاشْكُرُوا نِعْمَةَ اللهِ إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُوْنَ . لَئِنْ شَكَرْتُمْ لأَزِيدَنَّكُمْ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ .</p>
                     <p>١٩ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلسَّائِلِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ. أَدْعُوْنِي أَسْتَجِبْ لَكُمْ .</p>
                     <p>٢٠ - اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلصَّالِحِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُوْنَ أُولَئِكَ هُمُ الْوارِثُوْنَ الَّذِينَ يَرِثُوْنَ الْفِرْدَوْسَ هُمْ فِيهَا خَالِدُوْنَ .</p>
@@ -307,14 +290,12 @@
                         <p class="arabic-text text-center text-pure-black">
                             اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطعتُ. أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.
                         </p>
-                        <p class="text-left text-xs text-amber-600 dark:text-amber-500 mt-4 font-semibold" dir="ltr">رواه البخاري</p>
                     </div>
 
                     <div class="space-y-6 arabic-text text-center text-pure-black border-t border-slate-100 dark:border-slate-700 pt-8">
                         <p>أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّمَا خَلَقَ. ×٣</p>
-                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ×٣</p>
+                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهو السَّمِيعُ الْعَلِيمُ ×٣</p>
                         <p>يَا لَطِيْفَا بِخَلْقِهِ يَا عَلِيْمًا بِخَلْقِهِ يَا خَبِيْرًا بِخَلْقِهِ الْطُفْ بِنَا يَا لَطِيْفُ يَا عَلِيمُ يَا خَبِيْرُ. ×٣</p>
-                        <p>يَا لَطِيفًا لَمْ يَزَلْ الْطُفْ بِنَا فِيْمَانَزَلْ إِنَّكَ لَطِيفٌ لَمْ تَزَلْ أُلْطُفْ بِنَا وَالْمُسْلِمِينَ. ×٣</p>
                     </div>
 
                     <div class="py-8 border-t border-slate-100 dark:border-slate-700">
@@ -340,54 +321,57 @@
     </div>
 
     <!-- PWA Install Guide Modal -->
-    <div id="pwa-modal" class="fixed inset-0 bg-black/80 z-[100] items-center justify-center p-4">
+    <div id="pwa-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
         <div class="bg-white rounded-3xl p-6 max-w-sm w-full ui-font text-center">
             <h3 class="text-xl font-bold text-emerald-800 mb-4">Instal Aplikasi</h3>
             <p id="pwa-guide-text" class="text-slate-600 mb-6 text-sm">Ketuk menu browser dan pilih "Instal" atau "Tambahkan ke Layar Utama" untuk akses offline.</p>
-            <button onclick="document.getElementById('pwa-modal').classList.remove('active')" class="w-full bg-emerald-700 text-white font-bold py-3 rounded-xl">Tutup</button>
+            <button onclick="document.getElementById('pwa-modal').classList.add('hidden'); document.getElementById('pwa-modal').classList.remove('flex')" class="w-full bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-3 rounded-xl transition">Tutup</button>
         </div>
     </div>
 
     <script>
-        // 1. GENERATE DYNAMIC MANIFEST
-        const manifest = {
-            "name": "Basyairul Khoirot - PP Raden Fatah",
-            "short_name": "Basyairul",
-            "start_url": window.location.href,
-            "display": "standalone",
-            "background_color": "#f8fafc",
-            "theme_color": "#065f46",
-            "icons": [
-                { "src": "image_355983.png", "sizes": "192x192", "type": "image/png" },
-                { "src": "image_355983.png", "sizes": "512x512", "type": "image/png" }
-            ]
-        };
-        const manifestStr = JSON.stringify(manifest);
-        const manifestBlob = new Blob([manifestStr], {type: 'application/json'});
-        document.getElementById('pwa-manifest').setAttribute('href', URL.createObjectURL(manifestBlob));
-
-        // 2. SERVICE WORKER FOR OFFLINE
-        if ('serviceWorker' in navigator) {
-            const swCode = `
-                const CACHE_NAME = 'basyairul-v6';
-                self.addEventListener('install', (e) => {
-                    e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(['/'])));
-                    self.skipWaiting();
-                });
-                self.addEventListener('fetch', (e) => {
-                    e.respondWith(caches.match(e.request).then(res => res || fetch(e.request)));
-                });
-            `;
-            const swBlob = new Blob([swCode], {type: 'application/javascript'});
-            navigator.serviceWorker.register(URL.createObjectURL(swBlob)).then(() => {
-                setTimeout(() => {
-                    document.getElementById('offline-ready-toast').classList.add('show');
-                    setTimeout(() => document.getElementById('offline-ready-toast').classList.remove('show'), 5000);
-                }, 2000);
-            }).catch(err => console.log("HTTPS required for PWA features."));
+        // 1. UI NAVIGATION
+        let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
+        let isDarkMode = false;
+        
+        function openReader() { 
+            document.getElementById('landing-page').classList.add('hidden'); 
+            document.getElementById('reader-page').classList.remove('hidden'); 
+            window.scrollTo(0,0); 
+        }
+        
+        function openLandingPage() { 
+            document.getElementById('reader-page').classList.add('hidden'); 
+            document.getElementById('landing-page').classList.remove('hidden'); 
+            window.scrollTo(0,0); 
+        }
+        
+        function changeFontSize(step) { 
+            currentFontSize = Math.min(Math.max(currentFontSize + step * 0.15, 1.0), 3.5); 
+            document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'rem'); 
+        }
+        
+        function toggleDarkMode() { 
+            isDarkMode = !isDarkMode; 
+            document.body.classList.toggle('dark-mode'); 
+            document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.toggle('hidden', isDarkMode)); 
+            document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.toggle('hidden', !isDarkMode)); 
         }
 
-        // 3. INSTALLATION LOGIC
+        // 2. PWA OFFLINE LOGIC
+        // Pastikan Anda membuat file sw.js di folder root Github/Vercel Anda.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Di sini kita meregistrasi file 'sw.js' beneran, bukan Virtual Blob lagi.
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('SW terdaftar: ', registration.scope);
+                }).catch(error => {
+                    console.log('SW Gagal. Pastikan file sw.js ada di repositori Anda.', error);
+                });
+            });
+        }
+
+        // 3. PWA INSTALLATION PROMPT
         let deferredPrompt;
         const triggerBtn = document.getElementById('install-trigger-btn');
         const pwaModal = document.getElementById('pwa-modal');
@@ -396,33 +380,29 @@
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
             deferredPrompt = e;
+            triggerBtn.classList.remove('hidden'); // Tampilkan tombol instal jika didukung otomatis
         });
 
-        triggerBtn.onclick = async () => {
+        triggerBtn.addEventListener('click', async () => {
             if (deferredPrompt) {
                 deferredPrompt.prompt();
                 const { outcome } = await deferredPrompt.userChoice;
-                if (outcome === 'accepted') deferredPrompt = null;
+                if (outcome === 'accepted') {
+                    deferredPrompt = null;
+                    triggerBtn.classList.add('hidden');
+                }
             } else {
+                // Tampilkan Modal Petunjuk Manual
                 const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 if (isIOS) {
                     guideText.innerText = 'Di iPhone: Ketuk ikon "Bagikan" (panah ke atas) di bawah, lalu pilih "Tambah ke Layar Utama".';
                 } else {
-                    guideText.innerText = 'Buka menu browser (titik tiga) dan pilih "Instal Aplikasi" atau "Tambahkan ke Layar Utama".';
+                    guideText.innerText = 'Buka menu browser (titik tiga) di pojok kanan atas dan pilih "Instal Aplikasi" atau "Tambahkan ke Layar Utama".';
                 }
-                pwaModal.classList.add('active');
+                pwaModal.classList.remove('hidden');
+                pwaModal.classList.add('flex');
             }
-        };
-
-        // UI NAVIGATION
-        let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
-        let isDarkMode = false;
-        function openReader() { document.getElementById('landing-page').classList.add('hidden'); document.getElementById('reader-page').classList.remove('hidden'); window.scrollTo(0,0); }
-        function openLandingPage() { document.getElementById('reader-page').classList.add('hidden'); document.getElementById('landing-page').classList.remove('hidden'); window.scrollTo(0,0); }
-        function changeFontSize(step) { currentFontSize = Math.min(Math.max(currentFontSize + step * 0.15, 1.0), 3.5); document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'rem'); }
-        function toggleDarkMode() { isDarkMode = !isDarkMode; document.body.classList.toggle('dark-mode'); document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.toggle('hidden', isDarkMode)); document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.toggle('hidden', !isDarkMode)); }
-        window.ononline = () => document.getElementById('connection-status').style.display = 'none';
-        window.onoffline = () => document.getElementById('connection-status').style.display = 'block';
+        });
     </script>
 </body>
 </html>

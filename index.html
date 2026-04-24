@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Basyairul">
     
-    <!-- Fallback Icon if image fails -->
+    <!-- Icon Placeholder (Ganti image_355983.png jika ingin ikon lain) -->
     <link rel="icon" type="image/png" href="image_355983.png">
     <link rel="apple-touch-icon" href="image_355983.png">
 
@@ -111,7 +111,7 @@
         /* Toast Offline Notification */
         #offline-ready-toast {
             position: fixed;
-            bottom: 20px;
+            bottom: 24px;
             left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: #065f46;
@@ -124,6 +124,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            white-space: nowrap;
         }
         #offline-ready-toast.show {
             transform: translateX(-50%) translateY(0);
@@ -135,7 +136,7 @@
     <!-- Toast Notification -->
     <div id="offline-ready-toast" class="ui-font text-sm font-semibold">
         <svg class="w-5 h-5 text-emerald-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-        Siap digunakan secara Offline!
+        Aplikasi Siap Digunakan Tanpa Internet!
     </div>
 
     <!-- Landing Page -->
@@ -143,10 +144,10 @@
         
         <!-- Header Controls -->
         <div class="w-full max-w-5xl flex justify-between mb-8 relative z-20" dir="ltr">
-            <!-- PWA Install Button -->
-            <button id="pwa-install-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-full shadow-md text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
+            <!-- PWA Install Button (Always visible logic handled in JS) -->
+            <button id="pwa-install-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-white rounded-full shadow-lg text-xs font-bold ui-font transition-all transform active:scale-95 border border-emerald-500">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                <span>Pasang Aplikasi</span>
+                <span>Instal Aplikasi</span>
             </button>
 
             <button onclick="toggleDarkMode()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700 ml-auto">
@@ -165,12 +166,12 @@
         </div>
 
         <div class="w-full max-w-5xl flex justify-center relative z-20 px-2">
-            <div class="w-full max-w-md bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border-t-8 border-emerald-700 flex flex-col justify-between transform transition duration-300 hover:shadow-emerald-500/10 group">
+            <div class="w-full max-w-md bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border-t-8 border-emerald-700 flex flex-col justify-between transform transition duration-300 group">
                 <div class="absolute top-0 right-0 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-3 py-1 rounded-bl-lg z-10 tracking-widest uppercase">Tersedia</div>
                 <div class="mt-4">
                     <h2 class="arabic-text text-4xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-4 text-center leading-normal">بشائر الخيرات</h2>
                     <h3 class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center ui-font">Basyairul Khoirot</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Kumpulan sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Shalawat Kubro.</p>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan sholawat Kubro.</p>
                 </div>
                 <button onclick="openReader()" class="w-full ui-font bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 touch-manipulation active:scale-[0.98]">
                     <span>Baca Sekarang</span>
@@ -180,7 +181,7 @@
         </div>
 
         <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs relative z-20 opacity-80">
-            <p>© 2026 PP. Raden Fatah Pekalongan</p>
+            <p>© 2026 PP. Raden Fatah Pekalongan | Aplikasi Offline</p>
         </footer>
     </div>
 
@@ -223,7 +224,6 @@
                     <p class="arabic-text font-bold text-3xl sm:text-4xl text-amber-600 dark:text-amber-500">بسم الله الرحمن الرحيم</p>
                 </div>
 
-                <!-- Bagian Bashairul Khairat -->
                 <div class="space-y-10 arabic-text text-justify text-pure-black">
                     <p>۱ - الحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُؤْمِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الْمُؤْمِنِينَ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ</p>
                     <p>٢ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلذَّاكِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَاذْكُرُونِي أَذْكُرْكُمْ اذْكُرُوا اللهَ ذِكْرًا كَثِيرًا وَسَبِّحُوهُ بُكْرَةً وَأَصِيلًا هُوَ الَّذِي يُصَلِّي عَلَيْكُمْ وَمَلَائِكَتُهُ لِيُخْرِجَكُمْ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا تَحِيَّتُهُمْ يَوْمَ يَلْقَوْنَهُ سَلَامٌ وَأَعَدَّ لَهُمْ أَجْرًا كَرِيمًا</p>
@@ -258,10 +258,12 @@
                     <p>٣١- اللهُمَّ صَلِّ عَلَيْهِ صَلَاةً تُشْرَحُ بِهَا الصُّدُورُ وَتَهُوْنُ بِهَا الْأُمُورُ وَتَنْكَشِفُ بِهَا السُّتُوْرُ وَسَلَّمْ تَسْلِيمًا كَثِيرًا دَائِمًا إِلَى يَوْمِ الدِّينِ دَعْوَاهُمْ فِيهَا سُبْحَانَكَ اللَّهُمَّ وَتَحِيَّتُهُمْ فِيهَا سَلَامٌ وَآخِرُ دَعْوَاهُمْ أَنِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
                 </div>
 
+                <!-- Pembatas Ornamen -->
                 <div class="divider-ornament">
                     <span class="divider-symbol">❦</span>
                 </div>
 
+                <!-- Bagian Shalawat Kubro LENGKAP -->
                 <div class="text-center mb-10">
                     <h3 class="text-3xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-2 drop-shadow-sm">الصلوات الكبرى</h3>
                     <div class="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
@@ -288,7 +290,7 @@
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ عَظَّمَهُ اللهُ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ شَرَّفَهُ اللهُ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ أَظْهَرَهُ اللهُ</p>
-                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ sَلَامٍ عَلَيْكَ يَا مَنِ اخْتَارَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنِ اخْتَارَهُ اللهُ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ صَوَّرَهُ اللهُ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ عَبَدَ اللهَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا خَيْرَ خَلْقِ اللهِ</p>
@@ -321,7 +323,7 @@
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْأَوَّلِينَ وَالْآخِرِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ sَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُحْسِنِينَ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْكَوْنَيْنِ وَالثَّقَلَيْنِ</p>
-                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ النَّعْلَيْنِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ Nعْلَيْنِ</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا رَسُوْلَ اللهِ يَا خَاتِمَ الْأَنْبِيَاءِ وَالْمُرْسَلِينَ .</p>
                     <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا نَبِيَّ اللهِ إِلَى يَوْمِ الدِّينِ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
                 </div>
@@ -343,14 +345,12 @@
                         <p class="arabic-text text-center text-pure-black">
                             اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطعتُ. أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.
                         </p>
-                        <p class="text-left text-xs text-amber-600 dark:text-amber-500 mt-4 font-semibold" dir="ltr">رواه البخاري</p>
                     </div>
 
                     <div class="space-y-6 arabic-text text-center text-pure-black border-t border-slate-100 dark:border-slate-700 pt-8">
                         <p>أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّمَا خَلَقَ. ×٣</p>
-                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ×٣</p>
+                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهو السَّمِيعُ الْعَلِيمُ ×٣</p>
                         <p>يَا لَطِيْفَا بِخَلْقِهِ يَا عَلِيْمًا بِخَلْقِهِ يَا خَبِيْرًا بِخَلْقِهِ الْطُفْ بِنَا يَا لَطِيْفُ يَا عَلِيمُ يَا خَبِيْرُ. ×٣</p>
-                        <p>يَا لَطِيفًا لَمْ يَزَلْ الْطُفْ بِنَا فِيْمَانَزَلْ إِنَّكَ لَطِيفٌ لَمْ تَزَلْ أُلْطُفْ بِنَا وَالْمُسْلِمِينَ. ×٣</p>
                     </div>
 
                     <div class="py-8 border-t border-slate-100 dark:border-slate-700">
@@ -375,69 +375,96 @@
         </div>
     </div>
 
-    <!-- PWA Offline Logic -->
+    <!-- PWA Offline Logic & Service Worker -->
     <script>
-        // Setup PWA Manifest
-        const manifest = {
+        // 1. DYNAMIC MANIFEST
+        const manifestData = {
             "name": "Basyairul Khoirot Digital",
             "short_name": "Basyairul",
-            "description": "Kitab Basyairul Khoirot oleh Syekh Abdul Qadir Al-Jailani",
-            "start_url": "./",
+            "description": "Kitab Basyairul Khoirot Digital Offline",
+            "start_url": window.location.pathname,
             "display": "standalone",
             "background_color": "#f8fafc",
             "theme_color": "#065f46",
+            "orientation": "portrait",
             "icons": [
-                { "src": "image_355983.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
-                { "src": "image_355983.png", "sizes": "512x512", "type": "image/png" }
+                { "src": "image_355983.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+                { "src": "image_355983.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
             ]
         };
-        const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
         document.getElementById('pwa-manifest').setAttribute('href', URL.createObjectURL(manifestBlob));
 
-        // SERVICE WORKER STRATEGY (Cache Everything)
+        // 2. ROBUST SERVICE WORKER
         if ('serviceWorker' in navigator) {
-            const swScript = `
-                const CACHE_NAME = 'basyairul-v3';
+            const swCode = `
+                const CACHE_NAME = 'basyairul-offline-v4';
+                const APP_URL = self.location.origin + self.location.pathname;
+                
                 const ASSETS = [
-                    '/', 
-                    location.href,
+                    '/',
                     'https://cdn.tailwindcss.com',
+                    'https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap',
                     'https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000'
                 ];
 
                 self.addEventListener('install', (event) => {
                     event.waitUntil(
-                        caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+                        caches.open(CACHE_NAME).then((cache) => {
+                            console.log('Caching assets');
+                            return cache.addAll(ASSETS);
+                        })
                     );
                     self.skipWaiting();
                 });
 
+                self.addEventListener('activate', (event) => {
+                    event.waitUntil(
+                        caches.keys().then((keys) => {
+                            return Promise.all(keys.map((key) => {
+                                if (key !== CACHE_NAME) return caches.delete(key);
+                            }));
+                        })
+                    );
+                });
+
                 self.addEventListener('fetch', (event) => {
                     event.respondWith(
-                        caches.match(event.request).then((response) => {
-                            return response || fetch(event.request).then((fetchRes) => {
-                                return caches.open(CACHE_NAME).then((cache) => {
-                                    cache.put(event.request, fetchRes.clone());
-                                    return fetchRes;
-                                });
+                        caches.match(event.request).then((cachedResponse) => {
+                            if (cachedResponse) return cachedResponse;
+                            
+                            return fetch(event.request).then((networkResponse) => {
+                                // Cache current page on the fly
+                                if (event.request.url.includes(self.location.origin)) {
+                                    return caches.open(CACHE_NAME).then((cache) => {
+                                        cache.put(event.request, networkResponse.clone());
+                                        return networkResponse;
+                                    });
+                                }
+                                return networkResponse;
                             });
-                        }).catch(() => caches.match(location.href))
+                        }).catch(() => caches.match('/'))
                     );
                 });
             `;
-            const blob = new Blob([swScript], {type: 'application/javascript'});
-            navigator.serviceWorker.register(URL.createObjectURL(blob))
-                .then(() => {
-                    // Show Toast when ready
+            
+            const swBlob = new Blob([swCode], {type: 'application/javascript'});
+            const swUrl = URL.createObjectURL(swBlob);
+            
+            navigator.serviceWorker.register(swUrl)
+                .then(reg => {
+                    console.log('SW Registered');
+                    // Notification logic
                     setTimeout(() => {
-                        document.getElementById('offline-ready-toast').classList.add('show');
-                        setTimeout(() => document.getElementById('offline-ready-toast').classList.remove('show'), 4000);
-                    }, 3000);
+                        const toast = document.getElementById('offline-ready-toast');
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 5000);
+                    }, 4000);
                 })
-                .catch(err => console.log("SW Fail:", err));
+                .catch(err => console.log('SW Fail:', err));
         }
 
-        // Install Button Logic
+        // 3. INSTALL PROMPT LOGIC
         let deferredPrompt;
         const installBtn = document.getElementById('pwa-install-btn');
 
@@ -456,7 +483,7 @@
             }
         });
 
-        // Reader App UI Scripts
+        // 4. NAVIGATION & UI
         let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
         let isDarkMode = false;
 

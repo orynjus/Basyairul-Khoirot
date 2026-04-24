@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="image_355983.png">
 
     <!-- Web App Manifest -->
-    <link rel="manifest" id="pwa-manifest">
+    <link rel="manifest" href="manifest.json">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,7 +134,7 @@
             <div class="mt-4">
                 <h2 class="arabic-text text-4xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-4 text-center leading-normal">بشائر الخيرات</h2>
                 <h3 class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center ui-font">Basyairul Khoirot</h3>
-                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Sholawat Kubro.</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Kumpulan sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Shalawat Kubro.</p>
             </div>
             <button onclick="openReader()" class="w-full ui-font bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 active:scale-95">
                 <span>Mulai Membaca</span>
@@ -362,8 +362,7 @@
         // Pastikan Anda membuat file sw.js di folder root Github/Vercel Anda.
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // Di sini kita meregistrasi file 'sw.js' beneran, bukan Virtual Blob lagi.
-                navigator.serviceWorker.register('/sw.js').then(registration => {
+                navigator.serviceWorker.register('sw.js').then(registration => {
                     console.log('SW terdaftar: ', registration.scope);
                 }).catch(error => {
                     console.log('SW Gagal. Pastikan file sw.js ada di repositori Anda.', error);

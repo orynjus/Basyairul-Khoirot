@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>بشائر الخيرات - Basyairul Khoirot</title>
+    
+    <!-- PWA & Mobile Meta Tags -->
+    <meta name="theme-color" content="#065f46">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Basyairul Khoirot">
+    <link rel="apple-touch-icon" href="image_355983.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --font-size-base: 1.25rem;
+        }
+        @media (min-width: 640px) {
+            :root { --font-size-base: 1.5rem; }
+        }
+        body {
+            font-family: 'Amiri', serif;
+            transition: background-color 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ui-font {
+            font-family: 'Inter', sans-serif;
+        }
+        .arabic-text {
+            font-size: var(--font-size-base);
+            line-height: 2.3;
+            transition: font-size 0.3s;
+            word-wrap: break-word;
+        }
+        .dark-mode {
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        .dark-mode .paper {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-color: #334155;
+        }
+        
+        .text-pure-black {
+            color: #000000 !important;
+        }
+        .dark-mode .text-pure-black {
+            color: #f8fafc !important; 
+        }
+
+        #landing-page {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(248, 250, 252, 0.98)), 
+                              url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+        }
+        @media (min-width: 1024px) {
+            #landing-page { background-attachment: fixed; }
+        }
+        
+        .dark-mode #landing-page {
+            background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98)), 
+                              url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000');
+        }
+
+        .bg-islamic-pattern {
+            background-color: #f8fafc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2316a34a' fill-opacity='0.05'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83-2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .dark-mode.bg-islamic-pattern {
+            background-color: #0f172a;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2334d399' fill-opacity='0.03'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83-2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .divider-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 3rem 0;
+            opacity: 0.4;
+        }
+        .divider-ornament::before, .divider-ornament::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d97706, transparent);
+        }
+        .divider-symbol {
+            margin: 0 1rem;
+            color: #d97706;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-islamic-pattern text-slate-900 transition-colors duration-300 min-h-screen">
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="relative min-h-screen flex flex-col items-center pt-8 sm:pt-16 pb-16 px-4 sm:px-6 z-10 transition-all duration-700 overflow-x-hidden">
+        
+        <!-- Header Controls -->
+        <div class="w-full max-w-5xl flex justify-between mb-8 relative z-20" dir="ltr">
+            <!-- PWA Install Button (Hidden by default) -->
+            <button id="pwa-install-btn" class="hidden flex items-center space-x-2 px-4 py-2 bg-emerald-700 hover:bg-emerald-600 text-white rounded-full shadow-md text-xs font-bold ui-font transition-all transform active:scale-95">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <span>Instal Aplikasi</span>
+            </button>
+
+            <button onclick="toggleDarkMode()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700 ml-auto">
+                <svg id="moon-icon-landing" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                <svg id="sun-icon-landing" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </button>
+        </div>
+
+        <div class="w-full max-w-3xl text-center mb-10 relative z-20 px-2">
+            <div class="flex justify-center mb-6">
+                <img src="image_355983.png" alt="Logo RF" class="h-28 sm:h-40 object-contain drop-shadow-2xl" onerror="this.onerror=null; this.outerHTML='<div class=\'w-24 h-24 sm:w-32 sm:h-32 bg-emerald-100/80 dark:bg-emerald-900/80 backdrop-blur rounded-full flex items-center justify-center mx-auto border-4 border-white dark:border-slate-800 shadow-xl\'><span class=\'text-3xl sm:text-4xl font-bold text-emerald-700 dark:text-emerald-300 ui-font\'>RF</span></div>';">
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-bold text-emerald-900 dark:text-emerald-400 mb-3 ui-font tracking-tight leading-tight">Koleksi Kitab & Sholawat</h1>
+            <p class="text-slate-700 dark:text-slate-200 ui-font text-base sm:text-xl font-semibold bg-white/40 dark:bg-black/20 inline-block px-5 py-1.5 rounded-full backdrop-blur-sm shadow-sm mb-3">Pondok Pesantren Raden Fatah</p>
+            <p class="text-amber-700 dark:text-amber-500 ui-font text-[10px] sm:text-xs font-bold tracking-[0.2em] uppercase">BATURSARI - TALUN - PEKALONGAN</p>
+        </div>
+
+        <div class="w-full max-w-5xl flex justify-center relative z-20 px-2">
+            <div class="w-full max-w-md bg-white/95 dark:bg-slate-800/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 sm:p-10 border-t-8 border-emerald-700 flex flex-col justify-between transform transition duration-300 hover:shadow-emerald-500/10 group">
+                <div class="absolute top-0 right-0 bg-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-3 py-1 rounded-bl-lg z-10 tracking-widest uppercase">Tersedia</div>
+                <div class="mt-4">
+                    <h2 class="arabic-text text-4xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-4 text-center leading-normal">بشائر الخيرات</h2>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2 text-center ui-font">Basyairul Khoirot</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base text-center mb-10 ui-font leading-relaxed px-2">Sholawat karangan Syekh Abdul Qadir Al-Jailani, dilengkapi dengan Shalawat Kubro</p>
+                </div>
+                <button onclick="openReader()" class="w-full ui-font bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 touch-manipulation active:scale-[0.98]">
+                    <span>Baca Sekarang</span>
+                    <svg class="w-5 h-5 ml-1 transform transition group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <footer class="mt-auto pt-10 text-center ui-font text-slate-500 dark:text-slate-400 text-[10px] sm:text-xs relative z-20 opacity-80">
+            <p>© 2026 PP. Raden Fatah Pekalongan</p>
+        </footer>
+    </div>
+
+    <!-- Reader Page -->
+    <div id="reader-page" class="hidden relative z-10 overflow-x-hidden">
+        <nav dir="ltr" class="ui-font fixed top-0 w-full bg-emerald-800 text-white p-2.5 sm:p-3 shadow-lg z-50 flex justify-between items-center border-b-4 border-amber-500">
+            <div class="font-bold text-base sm:text-lg pl-2 sm:pl-4 tracking-tight whitespace-nowrap overflow-hidden text-ellipsis">Basyairul Khoirot</div>
+            <div class="flex items-center space-x-1 sm:space-x-2">
+                <button onclick="openLandingPage()" class="p-2 bg-emerald-900 hover:bg-emerald-700 rounded-lg transition touch-manipulation" title="Beranda">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                </button>
+                <div class="flex bg-emerald-700 rounded-lg overflow-hidden border border-emerald-600">
+                    <button onclick="changeFontSize(-1)" class="px-3 py-2 hover:bg-emerald-600 transition border-r border-emerald-600 font-bold">A-</button>
+                    <button onclick="changeFontSize(1)" class="px-3 py-2 hover:bg-emerald-600 transition font-bold">A+</button>
+                </div>
+                <button onclick="toggleDarkMode()" class="p-2 bg-slate-800 hover:bg-slate-700 rounded-lg transition touch-manipulation">
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+            </div>
+        </nav>
+
+        <div class="pt-20 sm:pt-28 px-3 sm:px-6 lg:px-8 max-w-4xl mx-auto mb-10">
+            <div class="paper bg-white rounded-2xl shadow-2xl p-5 sm:p-12 border border-slate-200 transition-colors duration-300 relative overflow-hidden">
+                
+                <div class="absolute top-0 left-0 w-16 h-16 sm:w-24 sm:h-24 bg-amber-500 opacity-[0.05] rounded-br-full pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-amber-500 opacity-[0.05] rounded-bl-full pointer-events-none"></div>
+
+                <div class="text-center border-b-2 border-amber-500 pb-8 mb-10">
+                    <h1 class="text-2xl sm:text-4xl font-bold text-emerald-900 dark:text-emerald-400 leading-tight mb-2">معهد الإسلامي رادين فتاح</h1>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-amber-600 dark:text-amber-500 leading-tight mb-4 mt-4 sm:mt-6">بشائر الخيرات وبلوغ المسرات</h2>
+                    <h3 class="text-xl sm:text-3xl font-semibold text-emerald-700 dark:text-emerald-300 leading-normal mb-6">مع الصلوات الكبرى</h3>
+                    <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700 ui-font text-center" dir="ltr">
+                        <p class="font-bold text-sm sm:text-lg text-slate-800 dark:text-slate-200 tracking-wide uppercase">PP. RADEN FATAH</p>
+                        <p class="text-amber-600 dark:text-amber-500 text-xs sm:text-sm font-semibold mt-1 uppercase">Batursari - Talun - Pekalongan</p>
+                    </div>
+                </div>
+
+                <div class="text-center mb-10">
+                    <p class="arabic-text font-bold text-3xl sm:text-4xl text-amber-600 dark:text-amber-500">بسم الله الرحمن الرحيم</p>
+                </div>
+
+                <div class="space-y-10 arabic-text text-justify text-pure-black">
+                    <p>۱ - الحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُؤْمِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الْمُؤْمِنِينَ وَأَنَّ اللَّهَ لَا يُضِيعُ أَجْرَ الْمُؤْمِنِينَ</p>
+                    <p>٢ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلذَّاكِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَاذْكُرُونِي أَذْكُرْكُمْ اذْكُرُوا اللهَ ذِكْرًا كَثِيرًا وَسَبِّحُوهُ بُكْرَةً وَأَصِيلًا هُوَ الَّذِي يُصَلِّي عَلَيْكُمْ وَمَلَائِكَتُهُ لِيُخْرِجَكُمْ مِنَ الظُّلُمَاتِ إِلَى النُّوْرِ وَكَانَ بِالْمُؤْمِنِينَ رَحِيمًا تَحِيَّتُهُمْ يَوْمَ يَلْقَوْنَهُ سَلَامٌ وَأَعَدَّ لَهُمْ أَجْرًا كَرِيمًا</p>
+                    <p>٣ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْعَامِلِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : أَنِّي لَا أُضِيعُ عَمَلَ عَامِلٍ مِنْكُمْ مِنْ ذَكَرٍ أَوْ أُنْثَى . وَمَنْ عَمِلَ صَالِحًا مِنْ ذَكَرٍ أَوْ أُنْثَى وَهُوَ مُؤْمِنٌ فَأُولَئِكَ يَدْخُلُوْنَ الْجَنَّةَ يُرْزَقُوْنَ فِيهَا بِغَيْرِ حِسَابٍ .</p>
+                    <p>٤ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْأَوَّابِينَ bِمَا قَالَ اللهُ الْعَظِيمُ : فَإِنَّهُ كَانَ لِلْأَوَّابِينَ غَفُوْرًا لَهُمْ مَا يَشَاؤُنَ عِنْدَ رَبِّهِمْ ذَلِكَ جَزَاءُ الْمُحْسِنِينَ</p>
+                    <p>٥ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلتَّوَّابِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّ اللهَ يُحِبُّ التَّوَّابِينَ وَيُحِبُّ الْمُتَطَهِّرِينَ وَهُوَ الَّذِي يَقْبَلُ التَّوْبَةَ عَنْ عِبَادِهِ وَيَعْفُو عَنِ السَّيِّئَاتِ .</p>
+                    <p>٦ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُخْلِصِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَمَنْ كَانَ يَرْجُو لِقَاءَ رَبِّهِ فَلْيَعْمَلْ عَمَلًا صَالِحًا وَلَا يُشْرِكْ بِعِبَادَةِ رَبِّهِ أَحَدًا ، مُخْلِصِينَ لَهُ الدِّينَ</p>
+                    <p>٧ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْمُصَلِّينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَقِمِ الصَّلَاةَ إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنْكَرِ ، أَقِمِ الصَّلاةَ وَأْمُرْ بِالْمَعْرُوْفِ وَانْهَ عَنِ الْمُنْكَرِ وَاصْبِرْ عَلَى مَا أَصَابَكَ إِنَّ ذَلِكَ مِنْ عَزْمِ الْأُمُوْرِ</p>
+                    <p>٨ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْخَاشِعِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَاسْتَعِينُوا بِالصَّبْرِ وَالصَّلَاةِ وَإِنَّهَا لَكَبِيرَةُ إِلَّا عَلَى الْخَاشِعِينَ الَّذِينَ يَظُنُّوْنَ أَنَّهُمْ مُلَاقُوْا رَبِّهِمْ وَأَنَّهُمْ إِلَيْهِ رَاجِعُوْنَ . الَّذِينَ يَذْكُرُوْنَ اللَّهَ قِيَامًا وَقُعُودًا وَعَلَى جُنُوبِهِمْ وَيَتَفَكَّرُوْنَ فِي خَلْقِ السَّمَوَاتِ وَالْأَرْضِ رَبَّنَا مَا خَلَقْتَ هَذَا بَاطِلاً سُبْحَانَكَ فَقِنَا عَذَابَ النَّارِ .</p>
+                    <p>۹ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلصَّابِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّمَا يُوَفَّى الصَّابِرُوْنَ أَجْرَهُمْ بِغَيْرِ حِسَابٍ أُولَئِكَ الَّذِينَ هَدَاهُمُ اللَّهُ وَأُولَئِكَ هُمْ أُولُو الْأَلْبَابِ .</p>
+                    <p>١٠ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْخَائِفِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَلِمَنْ خَافَ مَقَامَ رَبِّهِ جَنَّتَانِ ، وَأَمَّا مَنْ خَافَ مَقَامَ رَبِّهِ وَنَهَى النَّفْسَ عَنِ الْهَوَى فَإِنَّ الْجَنَّةَ هِيَ الْمَأْوَى .</p>
+                    <p>١١ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُتَّقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَرَحْمَتِي وَسِعَتْ كُلَّ شَيْءٍ فَسأَكْتُبُهَا لِلَّذِينَ يَتَّقُوْنَ وَيُؤْتُوْنَ الزَّكَاةَ وَالَّذِينَ هُمْ بِآيَاتِنَا يُؤْمِنُوْنَ الَّذِينَ يَتَّبِعُوْنَ الرَّسُولَ النَّبِيَّ الْأُتِيَّ لَهُمْ جَزَاءُ الضَّعْفِ بِمَا عَمِلُوْا وَهُمْ فِي الْغُرُفَاتِ آمِنُوْنَ</p>
+                    <p>١٢ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُخْبِتِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الْمُخْبِتِيْنَ الَّذِينَ إِذَا ذُكِرَ اللَّهُ وَجِلَتْ قُلُوْبُهُمْ وَالَّذِينَ يُؤْتُونَ مَا أَتَوْا وَقُلُوْبُهُمْ وَجِلَةٌ أَنَّهُمْ إِلَى رَبِّهِمْ رَاجِعُوْنَ</p>
+                    <p>١٣ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْصَّابِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الصَّابِرِينَ الَّذِينَ إِذَا أَصَابَتْهُمْ مُصِيبَةٌ قَالُوْا إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُوْنَ أُولَئِكَ عَلَيْهِمْ صَلَوَاتٌ مِنْ رَبِّهِمْ وَأُولَئِكَ هُمُ الْمُهْتَدُوْنَ . إِنِّي جَزَيْتُهُمُ الْيَوْمَ بِمَا صَبَرُوا أَنَّهُمْ هُمُ الْفَائِزُوْنَ .</p>
+                    <p>١٤ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْكَاظِمِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَالْكَاظِمِينَ الْغَيْظَ وَالْعَافِينَ عَنِ النَّاسِ وَاللَّهُ يُحِبُّ الْمُحْسِنِينَ . فَمَنْ عَفَا وَأَصْلَحَ فَأَجْرُهُ عَلَى اللَّهِ إِنَّهُ لَا يُحِبُّ الظَّالِمِينَ .</p>
+                    <p>١٥ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُحْسِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَحْسِنُوا إِنَّ اللهَ يُحِبُّ الْمُحْسِنِينَ . مَنْ جَاءَ بِالْحَسَنَةِ فَلَهُ عَشْرُ أَمْثَالِهَا وَمَنْ جَاءَ بِالسَّيِّئَةِ فَلَا يُجْزَى إِلَّا مِثْلَهَا وَهُمْ لَا يُظْلَمُوْنَ</p>
+                    <p>١٦ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْمُتَصَدِّقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَأَنْ تَصَدَّقُوْا خَيْرٌ لَكُمْ إِنْ كُنْتُمْ تَعْلَمُوْنَ . إِنَّ اللَّهَ يَجْزِى الْمُتَصَدِّقِينَ</p>
+                    <p>١٧ - اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُنْفِقِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَمِمَّا رَزَقْنَاهُمْ يُنْفِقُوْنَ . وَمَا أَنْفَقْتُمْ مِنْ شَيْءٍ فَهو يُخْلِفُهُ .</p>
+                    <p>١٨- اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلشَّاكِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَاشْكُرُوا نِعْمَةَ اللهِ إِنْ كُنْتُمْ إِيَّاهُ تَعْبُدُوْنَ . لَئِنْ شَكَرْتُمْ لأَزِيدَنَّكُمْ وَلَئِنْ كَفَرْتُمْ إِنَّ عَذَابِي لَشَدِيدٌ .</p>
+                    <p>١٩ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلسَّائِلِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ. أَدْعُوْنِي أَسْتَجِبْ لَكُمْ .</p>
+                    <p>٢٠ - اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلصَّالِحِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : أَنَّ الْأَرْضَ يَرِثُهَا عِبَادِيَ الصَّالِحُوْنَ أُولَئِكَ هُمُ الْوارِثُوْنَ الَّذِينَ يَرِثُوْنَ الْفِرْدَوْسَ هُمْ فِيهَا خَالِدُوْنَ .</p>
+                    <p>٢١ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُحْسِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّ اللَّهَ وَمَلَائِكَتَهُ يُصَلُّوْنَ عَلَى النَّبِيِّ يَا أَيُّهَا الَّذِينَ آمَنُوا صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا . يُؤْتِكُمْ كِفْلَيْنِ مِنْ رَحْمَتِهِ وَيَجْعَلْ لَكُمْ نُوْرًا تَمْشُوْنَ بِهِ وَيَغْفِرْ لَكُمْ وَاللَّهُ غَفُورٌ رَحِيمٌ .</p>
+                    <p>٢٢ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشَّرِ لِلْمُبَشَّرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَبَشِّرِ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ لَهُمُ الْبُشْرَى فِي الْحَيَاةِ الدُّنْيَا وَفِي الْآخِرَةِ لَا تَبْدِيلَ لِكَلِمَاتِ اللهِ ذَلِكَ هو الفوز العظيم .</p>
+                    <p>٢٣ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْفَائِزِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَمَنْ يُطِعِ اللَّهَ وَرَسُوْلَهُ فَقَدْ فَازَ فَوْزًا عَظِيمًا .</p>
+                    <p>٢٤ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلزَّاهِدِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : الْمَالُ وَالْبَنُونَ زِينَةُ الْحَيَاةِ الدُّنْيَا وَالْبَاقِيَاتُ الصَّالِحَاتُ خَيْرٌ عِنْدَ رَبِّكَ ثَوَابًا وَخَيْرُ أَمَلًا .</p>
+                    <p>٢٥ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْأُمِّيِّينَ بِمَا قَالَ اللهُ الْعَظِيمُ : كُنْتُمْ خَيْرَ أُمَّةٍ أُخْرِجَتْ لِلنَّاسِ تَأْمُرُوْنَ بِالْمَعْرُوْفِ وَتَنْهَوْنَ عَنِ الْمُنْكَرِ</p>
+                    <p>٢٦ - اللهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيرِ الْمُبَشِّرِ لِلْمُصْطَفِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : ثُمَّ أَوْرَثْنَا الْكِتَابَ الَّذِينَ اصْطَفَيْنَا مِنْ عِبَادِنَا فَمِنْهُمْ ظَالِمُ لِنَفْسِهِ وَمِنْهُمْ مُقْتَصِدٌ وَمِنْهُمْ سَابِقٌ بِالْخَيْرَاتِ بِإِذْنِ اللَّهِ ذَلِكَ هُوَ الْفَضْلُ الْكَبِيرُ .</p>
+                    <p>٢٧- اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُذْنِبِيْنَ بِمَا قَالَ اللهُ الْعَظِيمُ : قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَى أَنْفُسِهِمْ لَا تَقْنَطُوا مِنْ رَحْمَةِ اللَّهِ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوْبَ جَمِيعًا إِنَّهُ هُوَ الْغَفُورُ الرَّحِيمُ .</p>
+                    <p>٢٨ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُسْتَغْفِرِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : وَمَنْ يَعْمَلْ سُوءً أَوْ يَظْلِمْ نَفْسَهُ ثُمَّ يَسْتَغْفِرِ اللَّهَ يَجِدِ اللَّهَ غَفُورًا رَحِيمًا .</p>
+                    <p>٢٩ - اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُقَرَّبِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّ الَّذِينَ سَبَقَتْ لَهُمْ مِنَّا الْحُسْنَى أُولَئِكَ عَنْهَا مُبْعَدُوْنَ لَا يَسْمَعُوْنَ حَسِيْسَهَا وَهُمْ فِيمَا اشْتَهَتْ أَنْفُسُهُمْ خَالِدُوْنَ لَا يَحْزُنُهُمُ الْفَزَعُ الْأَكْبَرُ وَتَتَلَقَّاهُمُ الْمَلَائِكَةُ هَذَا يَوْمُكُمُ الَّذِي كُنْتُمْ تُوْعَدُوْنَ .</p>
+                    <p>٣٠ - اللهُمَّ صَلِّ وَسَلِّمْ عَلَى سَيِّدِنَا مُحَمَّدِنِ الْبَشِيْرِ الْمُبَشِّرِ لِلْمُؤْمِنِينَ بِمَا قَالَ اللهُ الْعَظِيمُ : إِنَّ الْمُسْلِمِينَ وَالْمُسْلِمَاتِ وَالْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَالْقَانِتِينَ وَالْقَانِتَاتِ وَالصَّادِقِينَ وَالصَّادِقَاتِ وَالصَّابِرِينَ وَالصَّابِرَاتِ وَالْخَاشِعِينَ وَالْخَاشِعَاتِ وَالْمُتَصَدِّقِينَ وَالْمُتَصَدِّقَاتِ وَالصَّائِمِينَ وَالصَّائِمَاتِ وَالْحَافِظِينَ فُرُوجَهُمْ وَالْحَافِظَاتِ وَالذَّاكِرِينَ اللَّهَ كَثِيرًا وَالذَّاكِرَاتِ أَعَدَّ اللهُ لَهُمْ مَغْفِرَةً وَأَجْرًا عَظِيمًا . وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَى وَأَنَّ سَعْيَهُ سَوْفَ يُرَى ثُمَّ يُجْزَاهُ الْجَزَاءَ الْأَوْفَى .</p>
+                    <p>٣١- اللهُمَّ صَلِّ عَلَيْهِ صَلَاةً تُشْرَحُ بِهَا الصُّدُورُ وَتَهُوْنُ بِهَا الْأُمُورُ وَتَنْكَشِفُ بِهَا السُّتُوْرُ وَسَلَّمْ تَسْلِيمًا كَثِيرًا دَائِمًا إِلَى يَوْمِ الدِّينِ دَعْوَاهُمْ فِيهَا سُبْحَانَكَ اللَّهُمَّ وَتَحِيَّتُهُمْ فِيهَا سَلَامٌ وَآخِرُ دَعْوَاهُمْ أَنِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
+                </div>
+
+                <!-- Pembatas Ornamen -->
+                <div class="divider-ornament">
+                    <span class="divider-symbol">❦</span>
+                </div>
+
+                <!-- Bagian Shalawat Kubro LENGKAP -->
+                <div class="text-center mb-10">
+                    <h3 class="text-3xl sm:text-5xl font-bold text-emerald-800 dark:text-emerald-400 mb-2 drop-shadow-sm">الصلوات الكبرى</h3>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
+                </div>
+                
+                <div class="space-y-4 arabic-text text-center font-semibold text-pure-black">
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُرْسَلِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ النَّبِيِّينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الصِّدِّيقِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الرَّاكِعِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْقَاعِدِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ السَّاجِدِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الذَّاكِرِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُكَبِّرِيْنَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الطَّاهِرِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الظَّاهِرِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الشَّاهِدِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْأَوَّلِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْآخِرِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا رَسُوْلَ اللهِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا نَبِيَّ اللهِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا حَبِيْبَ اللهِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ أَكْرَمَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ عَظَّمَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ شَرَّفَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ أَظْهَرَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ sَلَامٍ عَلَيْكَ يَا مَنِ اخْتَارَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ صَوَّرَهُ اللهُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَنْ عَبَدَ اللهَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا خَيْرَ خَلْقِ اللهِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا خَاتِمَ رُسُلِ اللهِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سُلْطَانَ الْأَنْبِيَاءِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا بُرْهَانَ الْأَصْفِيَاءِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُصْطَفَى</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُعْلَى</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُجْتَبَى</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُزَكَّى</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَكِّيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مَدَنِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا عَرَبِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا قُرَشِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا هَاشِمِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا أَبْطَحِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا زَمْزَمِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا تِهَامِيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا أُمِّيُّ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ وَلَدِ آدَمَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا أَحْمَدُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُحَمَّدُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا طه</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا يس</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا مُدَّثِرُ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ الْكَوْثَرِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا شَفِيْعُ يَوْمَ الْمَحْشَرِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ التَّاجِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ الْمِعْرَاجِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْأَوَّلِينَ وَالْآخِرِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْمُحْسِنِينَ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدَ الْكَوْنَيْنِ وَالثَّقَلَيْنِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا صَاحِبَ النَّعْلَيْنِ</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا رَسُوْلَ اللهِ يَا خَاتِمَ الْأَنْبِيَاءِ وَالْمُرْسَلِينَ .</p>
+                    <p>أَلْفُ أَلْفِ صَلَاةٍ وَأَلْفُ أَلْفِ سَلَامٍ عَلَيْكَ يَا سَيِّدِي يَا نَبِيَّ اللهِ إِلَى يَوْمِ الدِّينِ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ .</p>
+                </div>
+
+                <div class="divider-ornament">
+                    <span class="divider-symbol">❦</span>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="py-4">
+                        <h4 class="text-2xl sm:text-3xl font-bold text-emerald-800 dark:text-emerald-400 text-center mb-6">صَلَوَاتُ طِبّ الْقُلُوْبِ</h4>
+                        <p class="arabic-text text-center text-pure-black">
+                            اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ ، طِبّ الْقُلُوْبِ وَدَوَائِهَا ، وَعَافِيَةِ الْأَبْدَانِ وَشِفَائِهَا، وَنُوْرِ الْأَبْصَارِ وَضِيَائِهَا، وَقُوْتِ الْأَرْوَاحِ وَغِذَائِهَا ، وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمْ (٣)
+                        </p>
+                    </div>
+
+                    <div class="py-4 border-t border-slate-100 dark:border-slate-700">
+                        <h4 class="text-2xl sm:text-3xl font-bold text-amber-700 dark:text-amber-500 text-center mb-6">سَيِّدُ الْإِسْتِغْفَارِ</h4>
+                        <p class="arabic-text text-center text-pure-black">
+                            اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ خَلَقْتَنِي وَأَنَا عَبْدُكَ وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطعتُ. أَعُوْذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ وَأَبُوْءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.
+                        </p>
+                        <p class="text-left text-xs text-amber-600 dark:text-amber-500 mt-4 font-semibold" dir="ltr">رواه البخاري</p>
+                    </div>
+
+                    <div class="space-y-6 arabic-text text-center text-pure-black border-t border-slate-100 dark:border-slate-700 pt-8">
+                        <p>أَعُوْذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّمَا خَلَقَ. ×٣</p>
+                        <p>بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ ×٣</p>
+                        <p>يَا لَطِيْفَا بِخَلْقِهِ يَا عَلِيْمًا بِخَلْقِهِ يَا خَبِيْرًا بِخَلْقِهِ الْطُفْ بِنَا يَا لَطِيْفُ يَا عَلِيمُ يَا خَبِيْرُ. ×٣</p>
+                        <p>يَا لَطِيفًا لَمْ يَزَلْ الْطُفْ بِنَا فِيْمَانَزَلْ إِنَّكَ لَطِيفٌ لَمْ تَزَلْ أُلْطُفْ بِنَا وَالْمُسْلِمِينَ. ×٣</p>
+                    </div>
+
+                    <div class="py-8 border-t border-slate-100 dark:border-slate-700">
+                        <h4 class="text-3xl font-bold text-emerald-800 dark:text-emerald-400 text-center mb-6">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</h4>
+                        <p class="arabic-text text-center text-pure-black">
+                            أَلَمْ نَشْرَحْ لَكَ صَدْرَكْ. وَوَضَعْنَا عَنْكَ وِزْرَكَ الَّذِي أَنْقَضَ ظَهْرَكَ. وَرَفَعْنَا لَكَ ذِكْرَكَ. فَإِنَّ مَعَ الْعُسْرِ يُسْرًا. إِنَّ مَعَ الْعُسْرِ يُسْرًا، فَإِذَا فَرَغْتَ فَانْصَبْ، وَإِلَى رَبِّكَ فَارْغَبْ
+                        </p>
+                    </div>
+
+                    <div class="text-center font-bold py-6 px-4">
+                        <p class="arabic-text text-3xl sm:text-4xl text-amber-600 dark:text-amber-500 tracking-wider">حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ. ×٤٥</p>
+                    </div>
+
+                    <div class="pt-8 border-t-2 border-emerald-600 dark:border-emerald-500">
+                        <p class="arabic-text text-center text-emerald-700 dark:text-emerald-400 font-bold mb-6 italic">إِنَّ اللَّهَ وَمَلْئِكَتَهُ يُصَلُّوْنَ عَلَى النَّبِيُّ يَأَيُّهَا الَّذِينَ آمَنُوا صَلُّوْا عَلَيْهِ وَسَلِّمُوا تَسْلِيمًا</p>
+                        <p class="arabic-text text-justify text-pure-black">
+                            اللَّهُمَّ صَلِّ صَلَاةً كَامِلَةً وَسَلَّمْ سَلَامًا تَامَّا عَلَى سَيِّدِنَا مُحَمَّدِ بِالَّذِي تَنْحَلُّ بِهِ الْعُقَدُ وَتَنْفَرِجُ بِهِ الْكُرَبُ وَتُقْضَى بِهِ الْحَوَائِجُ وَتُنَالُ بِهِ الرَّغَائِبُ وَحُسْنُ الْخَوَاتِمِ وَيُسْتَسْقَى الْغَمَامُ بِوَجْهِهِ الْكَرِيمِ وَعَلَى آلِهِ وِصَحْبِهِ فِي كُلِّ لَمْحَةٍ وَ نَفَسٍ بِعَدَدِ كُلِّ مَعْلُوْمٍ لَكَ
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PWA Script Implementation -->
+    <script>
+        // Setup Virtual Manifest
+        const manifest = {
+            "name": "Basyairul Khoirot - PP Raden Fatah",
+            "short_name": "Basyairul",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#f8fafc",
+            "theme_color": "#065f46",
+            "icons": [
+                {
+                    "src": "image_355983.png",
+                    "sizes": "192x192",
+                    "type": "image/png",
+                    "purpose": "any maskable"
+                },
+                {
+                    "src": "image_355983.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        
+        const manifestBlob = new Blob([JSON.stringify(manifest)], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        const link = document.createElement('link');
+        link.rel = 'manifest';
+        link.href = manifestURL;
+        document.head.appendChild(link);
+
+        // Service Worker Logic (Simulated)
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+                const CACHE_NAME = 'basyairul-v1';
+                self.addEventListener('install', (e) => {
+                    e.waitUntil(caches.open(CACHE_NAME).then(c => c.addAll(['/'])));
+                });
+                self.addEventListener('fetch', (e) => {
+                    e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+                });
+            `;
+            const swBlob = new Blob([swCode], {type: 'application/javascript'});
+            const swURL = URL.createObjectURL(swBlob);
+            // navigator.serviceWorker.register(swURL).catch(() => {}); 
+            // Note: Registering from blob is restricted in some browsers for security.
+            // On a real server, place sw.js as a physical file.
+        }
+
+        // Install Application Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('pwa-install-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.classList.remove('hidden');
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.classList.add('hidden');
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        window.addEventListener('appinstalled', () => {
+            installBtn.classList.add('hidden');
+            deferredPrompt = null;
+        });
+
+        // App States
+        let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
+        let isDarkMode = false;
+
+        function openReader() {
+            document.getElementById('landing-page').classList.add('hidden');
+            document.getElementById('reader-page').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openLandingPage() {
+            document.getElementById('reader-page').classList.add('hidden');
+            document.getElementById('landing-page').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changeFontSize(step) {
+            currentFontSize += step * 0.15;
+            if (currentFontSize < 1.0) currentFontSize = 1.0;
+            if (currentFontSize > 3.5) currentFontSize = 3.5;
+            document.documentElement.style.setProperty('--font-size-base', currentFontSize + 'rem');
+        }
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            const body = document.body;
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.remove('hidden'));
+            } else {
+                body.classList.remove('dark-mode');
+                document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.remove('hidden'));
+                document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.add('hidden'));
+            }
+        }
+    </script>
+</body>
+</html>

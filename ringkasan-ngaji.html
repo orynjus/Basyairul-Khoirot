@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ringkasan Ngaji Pondok Pesantren Raden Fatah Batursari Talun</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900">
+    <div class="max-w-2xl mx-auto py-8 px-4">
+        <a href="index.html" class="inline-block mb-6 text-emerald-700 hover:underline font-bold">&larr; Kembali</a>
+        <h1 class="text-3xl font-bold mb-4 text-emerald-800">Ringkasan Ngaji PP. Raden Fatah</h1>
+        <!-- Tombol tambah ringkasan dipindah ke atas -->
+        <button id="addBtn" class="mb-6 bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-6 rounded shadow flex items-center gap-2">
+            <span>Tambah Ringkasan</span>
+            <span class="text-xl">+</span>
+        </button>
+        <div class="space-y-6" id="ringkasan-list">
+            <!-- Ringkasan akan di-generate di sini -->
+        </div>
+        <button id="saveBtn" class="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-6 rounded shadow">Simpan Ringkasan</button>
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbwdW81cMDOcm_Y-xcUSlNQ2uQusMhJS3rHxkttulNpZ0ZFZ8I2oihfZEuLigwwo7bopzA/exec?sheet=Sheet1";
+const ringkasanList = document.getElementById('ringkasan-list');
+let ringkasanData = [
+    {judul: "", isi: ""},
+    {judul: "", isi: ""}
+];
+
+// Fungsi untuk render semua ringkasan
+function renderRingkasan() {
+    ringkasanList.innerHTML = "";
+    ringkasanData.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = "bg-white rounded-xl shadow p-5";
+        div.innerHTML = `
+            <label class="block text-sm font-semibold text-slate-600 mb-1">Judul / Tanggal :</label>
+            <div contenteditable="true" class="judul border border-slate-300 rounded px-3 py-2 min-h-[2.5rem] focus:outline-none focus:ring-2 focus:ring-emerald-400 mb-3" data-idx="${idx}" placeholder="Tulis judul atau tanggal di sini...">${item.judul}</div>
+            <label class="block text-sm font-semibold text-slate-600 mb-1">Isi Ringkasan :</label>
+            <div contenteditable="true" class="isi border border-slate-300 rounded px-3 py-2 min-h-[4rem] focus:outline-none focus:ring-2 focus:ring-emerald-400" data-idx="${idx}" placeholder="Tulis isi ringkasan di sini...">${item.isi}</div>
+        `;
+        ringkasanList.appendChild(div);
+    });
+    // Event listener untuk update data saat diedit
+    document.querySelectorAll('.judul').forEach(el => {
+        el.oninput = e => {
+            ringkasanData[el.dataset.idx].judul = el.innerText;
+        };
+    });
+    document.querySelectorAll('.isi').forEach(el => {
+        el.oninput = e => {
+            ringkasanData[el.dataset.idx].isi = el.innerText;
+        };
+    });
+}
+
+// Ambil data dari Google Sheets saat halaman dibuka
+fetch(API_URL)
+  .then(res => res.json())
+  .then(data => {
+    if (Array.isArray(data) && data.length > 0) {
+      ringkasanData = data.map(row => ({
+        judul: row[0] || "",
+        isi: row[1] || ""
+      }));
+      renderRingkasan();
+    } else {
+      renderRingkasan();
+    }
+  });
+
+// Tombol tambah ringkasan
+document.getElementById('addBtn').onclick = function() {
+    ringkasanData.push({judul: "", isi: ""});
+    renderRingkasan();
+};
+
+// Tombol simpan
+document.getElementById('saveBtn').onclick = function() {
+  // Ambil data terbaru dari DOM
+  document.querySelectorAll('.judul').forEach(el => {
+    ringkasanData[el.dataset.idx].judul = el.innerText;
+  });
+  document.querySelectorAll('.isi').forEach(el => {
+    ringkasanData[el.dataset.idx].isi = el.innerText;
+  });
+  // Siapkan data untuk dikirim
+  const data = ringkasanData.map(item => [item.judul, item.isi]);
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {"Content-Type": "application/json"}
+  })
+  .then(res => res.text())
+  .then(txt => alert("Berhasil disimpan!"));
+};
+</script>
+<!-- ...existing code... -->
+    </div>
+</body>
+</html>

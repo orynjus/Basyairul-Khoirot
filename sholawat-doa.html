@@ -194,17 +194,9 @@
                     <div id="modal-content" class="space-y-4">
                         <!-- Content akan diisi dinamis -->
                     </div>
-                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
+                    <div class="mt-4 sm:mt-6 flex justify-end">
                         <button onclick="closeModal()" class="w-full sm:w-auto px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg transition text-sm sm:text-base">
                             Tutup
-                        </button>
-                        <button onclick="copyModalContent()" class="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition text-sm sm:text-base">
-                            <span class="flex items-center justify-center space-x-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V4a2 2 0 012-2h2m0 8h8m0 0V4m0 8H6a2 2 0 01-2-2V4a2 2 0 012-2h2"></path>
-                                </svg>
-                                <span class="text-xs sm:text-sm">Salin</span>
-                            </span>
                         </button>
                     </div>
                 </div>
@@ -360,47 +352,9 @@
                 document.body.style.overflow = 'auto';
             }
 
-            function copyModalContent() {
-                const data = sholawatData[getCurrentModalId()];
-                if (!data) return;
-
-                const textToCopy = `${data.title}\n\n${data.arabic}\n\n${data.artinya}`;
-                
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Tampilkan notifikasi sukses
-                    showNotification('Teks berhasil disalin!');
-                }).catch(err => {
-                    console.error('Gagal menyalin teks:', err);
-                    showNotification('Gagal menyalin teks');
-                });
-            }
-
-            function getCurrentModalId() {
-                const modalTitle = document.getElementById('modal-title').textContent;
-                for (const [id, data] of Object.entries(sholawatData)) {
-                    if (data.title === modalTitle) {
-                        return id;
-                    }
-                }
-                return null;
-            }
-
-            function showNotification(message) {
-                // Buat notifikasi sederhana
-                const notification = document.createElement('div');
-                notification.className = 'fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-[200] transition-all transform translate-x-0';
-                notification.textContent = message;
-                document.body.appendChild(notification);
-
-                // Hapus notifikasi setelah 3 detik
-                setTimeout(() => {
-                    notification.style.transform = 'translateX(400px)';
-                    setTimeout(() => {
-                        document.body.removeChild(notification);
-                    }, 300);
-                }, 3000);
-            }
-
+            
+            
+            
             // Tutup modal saat klik di luar modal
             document.getElementById('modal').addEventListener('click', function(e) {
                 if (e.target === this) {

@@ -28,10 +28,18 @@
         :root { --font-size-base: 1.25rem; }
         @media (min-width: 640px) { :root { --font-size-base: 1.5rem; } }
         
+        html {
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        
         body {
             font-family: 'Amiri', serif;
             transition: background-color 0.3s, color 0.3s;
             -webkit-tap-highlight-color: transparent;
+            overscroll-behavior: contain;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         .ui-font { font-family: 'Inter', sans-serif; }
         .arabic-text {
@@ -51,8 +59,18 @@
             background-size: cover;
             background-position: center;
             background-attachment: scroll;
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
         }
-        @media (min-width: 1024px) { #landing-page { background-attachment: fixed; } }
+        @media (min-width: 1024px) { 
+            #landing-page { 
+                background-attachment: fixed;
+                will-change: auto;
+                -webkit-transform: none;
+                transform: none;
+            } 
+        }
         .dark-mode #landing-page {
             background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98)), 
                               url('https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000');
@@ -94,6 +112,61 @@
             white-space: nowrap;
         }
         #offline-ready-toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* Mobile Touch Scroll Optimizations */
+        @media (max-width: 768px) {
+            * {
+                -webkit-tap-highlight-color: transparent;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            .arabic-text, .ui-font, input, textarea {
+                -webkit-user-select: text;
+                -khtml-user-select: text;
+                -moz-user-select: text;
+                -ms-user-select: text;
+                user-select: text;
+            }
+            
+            #landing-page {
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+            
+            .paper {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: auto;
+                max-height: none;
+            }
+            
+            /* Improve scroll momentum on iOS */
+            @supports (-webkit-touch-callout: none) {
+                #landing-page, .paper {
+                    -webkit-overflow-scrolling: touch;
+                    scroll-behavior: smooth;
+                }
+            }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-islamic-pattern text-slate-900 transition-colors duration-300 min-h-screen">

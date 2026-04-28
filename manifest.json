@@ -1,6 +1,6 @@
 {
   "name": "Digital - PP Raden Fatah",
-  "short_name": "Raden Fatah",
+  "short_name": "PP Raden Fatah",
   "description": "Kumpulan Kitab Digital",
   "start_url": "./index.html",
   "display": "standalone",
@@ -10,13 +10,13 @@
   "icons": [
     {
       "src": "image_355983.png",
-      "sizes": "192x192",
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "any"
     },
     {
       "src": "image_355983.png",
-      "sizes": "512x512",
+      "sizes": "144x144",
       "type": "image/png",
       "purpose": "maskable"
     }

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sholawat & Doa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .arabic-text { font-family: 'Amiri', serif; }
+        .rotate-180 { transform: rotate(180deg); }
+        .hidden-dot { 
+            display: none !important; 
+            visibility: hidden !important;
+            opacity: 0 !important;
+            width: 0 !important;
+            height: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            font-size: 0 !important;
+            line-height: 0 !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen text-slate-900">
+    <div class="max-w-4xl mx-auto py-8 px-4">
+        <a href="index.html" class="inline-block mb-6 text-blue-700 hover:underline font-bold">&larr; Kembali</a>
+        <h1 class="text-3xl font-bold mb-4 text-blue-800 text-center">Sholawat & Doa</h1>
+        <p class="text-center text-slate-600 mb-8">Kumpulan sholawat pilihan dan doa-doa harian untuk keberkahan hidup</p>
+        
+        <div class="space-y-6" id="sholawat-doa-list">
+            <!-- Sholawat Nabi -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-blue-500">
+                <h2 class="text-xl font-bold text-blue-700 mb-6">Sholawat Nabi</h2>
+                
+                <!-- Tombol Sholawat dengan Popup Modal -->
+                <div class="space-y-3">
+                    <div class="border border-blue-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('mahallul-qiyam')" class="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Sholawat Mahallul Qiyam</h3>
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-blue-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('ziarah-wali')" class="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Sholawat Ziarah Wali</h3>
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-blue-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('thibbil-qulub')" class="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Sholawat Thibbil Qulub</h3>
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-blue-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('munjiyat')" class="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Sholawat Munjiyat</h3>
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-blue-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('fatih')" class="w-full px-4 py-3 bg-blue-50 hover:bg-blue-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Sholawat Fatih</h3>
+                            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doa Harian -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-green-500">
+                <h2 class="text-xl font-bold text-green-700 mb-6">Doa Harian</h2>
+                
+                <!-- Tombol Doa Harian dengan Popup Modal -->
+                <div class="space-y-3">
+                    <div class="border border-green-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('doa-pagi')" class="w-full px-4 py-3 bg-green-50 hover:bg-green-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Doa Pagi Hari</h3>
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-green-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('doa-petang')" class="w-full px-4 py-3 bg-green-50 hover:bg-green-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Doa Petang Hari</h3>
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-green-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('doa-perlindungan')" class="w-full px-4 py-3 bg-green-50 hover:bg-green-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Doa Mohon Perlindungan</h3>
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Doa Mustajab -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500">
+                <h2 class="text-xl font-bold text-purple-700 mb-6">Doa Mustajab</h2>
+                
+                <!-- Tombol Doa Mustajab dengan Popup Modal -->
+                <div class="space-y-3">
+                    <div class="border border-purple-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('doa-setelah-sholat')" class="w-full px-4 py-3 bg-purple-50 hover:bg-purple-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Doa Setelah Sholat</h3>
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="border border-purple-200 rounded-lg overflow-hidden">
+                        <button onclick="openModal('doa-mohon-ampunan')" class="w-full px-4 py-3 bg-purple-50 hover:bg-purple-100 text-left flex justify-between items-center transition-colors">
+                            <h3 class="font-semibold text-slate-800">Doa Mohon Ampunan</h3>
+                            <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12m3 0m0 0l-3 3m3-3v-6m3 6v6m-9-18h18"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Popup -->
+        <div id="modal" class="fixed inset-0 bg-black/50 z-[100] hidden items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-h-[90vh] overflow-y-auto mx-4 my-4 sm:mx-auto sm:my-8 sm:max-w-2xl lg:max-w-3xl">
+                <div class="p-4 sm:p-6">
+                    <!-- Header Modal -->
+                    <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 space-y-3 sm:space-y-0">
+                        <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-800 text-center sm:text-left"></h2>
+                        
+                        <!-- Controls Container -->
+                        <div class="flex flex-wrap justify-center sm:justify-end items-center gap-2 sm:gap-3">
+                            <!-- Font Size Controls - Mobile Optimized -->
+                            <div class="flex items-center space-x-1 sm:space-x-2 bg-slate-100 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2">
+                                <span class="text-xs sm:text-sm font-medium text-slate-600 hidden sm:inline">Ukuran:</span>
+                                <button onclick="changeFontSize('decrease')" class="w-8 h-8 sm:w-6 sm:h-6 bg-white hover:bg-slate-200 rounded flex items-center justify-center transition">
+                                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 12l-4-4m0 8l4-4"></path>
+                                    </svg>
+                                </button>
+                                <span id="font-size-display" class="text-xs sm:text-sm font-bold text-slate-800 min-w-[2.5rem] sm:min-w-[3rem] text-center">Normal</span>
+                                <button onclick="changeFontSize('increase')" class="w-8 h-8 sm:w-6 sm:h-6 bg-white hover:bg-slate-200 rounded flex items-center justify-center transition">
+                                    <svg class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 12l4-4m0 8l-4-4"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <!-- Toggle Terjemahan - Mobile Optimized -->
+                            <button onclick="toggleTranslation()" id="translation-toggle" class="flex items-center space-x-1 sm:space-x-2 bg-amber-100 hover:bg-amber-200 text-amber-800 rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 transition">
+                                <svg id="translation-icon" class="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                <span id="translation-text" class="text-xs sm:text-sm font-medium hidden sm:inline">Tampilkan Terjemahan</span>
+                            </button>
+                            
+                            <!-- Close Button -->
+                            <button onclick="closeModal()" class="text-slate-500 hover:text-slate-700 transition p-1 sm:p-0">
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="modal-content" class="space-y-4">
+                        <!-- Content akan diisi dinamis -->
+                    </div>
+                    <div class="mt-4 sm:mt-6 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
+                        <button onclick="closeModal()" class="w-full sm:w-auto px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg transition text-sm sm:text-base">
+                            Tutup
+                        </button>
+                        <button onclick="copyModalContent()" class="w-full sm:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition text-sm sm:text-base">
+                            <span class="flex items-center justify-center space-x-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V4a2 2 0 012-2h2m0 8h8m0 0V4m0 8H6a2 2 0 01-2-2V4a2 2 0 012-2h2"></path>
+                                </svg>
+                                <span class="text-xs sm:text-sm">Salin</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Data sholawat dan doa
+            const sholawatData = {
+                'mahallul-qiyam': {
+                    title: 'Sholawat Mahallul Qiyam',
+                    arabic: '<span class="hidden-dot"></span>يَا نَبِى سَلَامْ عَلَيْكَ ۩ يَا رَسُوْلْ سَلَامْ عَلَيْكَ<br><span class="hidden-dot"></span>يَا حَبِيْبْ سَلَامْ عَلَيْكَ ۩ صَلَوَاتُ اللهْ عَلَيْكَ<br><span class="hidden-dot"></span>اَشْرَقَ الْبَدْرُ عَلَيْنَا ۩ فَاخْتَفَتْ مِنْهُ الْبُدُوْرُ <br><span class="hidden-dot"></span>مِثْلَ حُسْنِكْ مَا رَأَيْنَا ۩ قَطُّ يَا وَجْهَ السُّرُوْرِ<br><span class="hidden-dot"></span>اَنْتَ شَمْسٌ اَنْتَ بَدْرٌ ۩ اَنْتَ نُوْرٌ فَوْقَ نُوْرِ <br><span class="hidden-dot"></span>اَنْتَ اِكْسِيْرٌ وَّغَالِى ۩ اَنْتَ مِصْبَاحُ الصُّدُوْرِ<br><span class="hidden-dot"></span>يَاحَبِيْبِيْ يَامُحَمَّدْ ۩ يَا عَرُوْسَ الخَافِقَيْنِ<br><span class="hidden-dot"></span>يَا مُؤَيَّدْ يَا مُمَجَّدْ ۩ يَا اِمَامَ القِبْلَتَيْنِ<br><span class="hidden-dot"></span>مَنْ رَآى وَجْهَكَ يَسْعَدْ ۩ يَا كَرِيْمَ الوَالِدَيْنِ <br><span class="hidden-dot"></span>حَوْضُكَ الصَّافِى الْمُبَرَّدْ ۩ وِرْدُنَا يَوْمَ النُّشُوْرِ<br><span class="hidden-dot"></span>مَا رَأَيْنَا الْعِيْسَ حَنَّتْ ۩ بِالسُّرَى اِلَّا اِلَيْكَ <br><span class="hidden-dot">.</span>وَاْلَغَمَامَةْ قَدْ اَظَلَّتْ ۩ وَالْمَلَا صَلُّوْا عَلَيْكَ',
+                    artinya: 'Artinya: "Wahai Nabi, salam sejahtera untukmu, wahai Rasul salam sejahtera untukmu. Wahai Kekasih, salam sejahtera untukmu, shalawat (rahmat) Allah untukmu. Satu purnama telah terbit di atas kami, pudarlah jutaan purnama lain karenanya. Belum pernah kulihat seperti keelokanmu, wahai wajah yang gembira. Kau bak mentari, kau juga laksana purnama, kau cahaya di atas cahaya. Kau laksana obat segala guna (elixir) lagi mahal, kau adalah lentera hati. Wahai Kekasih, wahai Muhammad, wahai pengantin Timur dan Barat. Wahai Rasul yang diperkuat (oleh wahyu), wahai Nabi yang agung, wahai imam dua kiblat. Siapapun yang memandang wajahmu pasti bahagia, wahai manusia yang memiliki orang tua mulia. Telagamu berair jernih dan sejuk, yang kelak kami datangi pada hari kebangkitan. Belum pernah kami melihat unta peranakan unggul yang bersuara sambil berjalan malam hari, kecuali menuju kepadamu. Gumpalan awan menaungimu, semua makhuk mengucapkan shalawat untukmu."'
+                },
+                'ziarah-wali': {
+                    title: 'Sholawat Ziarah Wali',
+                    arabic: '<span class="hidden-dot">.</span>سَـــلاَمُ اللهِ يـَا سَـــادَةْ ۩ مِنَ الرَّحْمٰنِ يَغْـْشَاكُمْ<br> عِبَـــــادَ اللهِ جِـئْنَــاكُمْ ۩ قَـصَدْنَاكُمْ طَلَبْنَـاكُمْ<span class="hidden-dot">.</span><br> تُـعِــيـْنُوْنَــــا تُـغِــــيْثُوْنَــــا۩ بـهِمَّتِكُمْ وَجَــدْوَاكُـمْ <span class="hidden-dot">.</span><br>فَأَحْبُـوْنَـــــا وَأَعْـطُوْنَــــا ۩ عَـطَاَياكُمْ هَـــدَايَـاكُمْ<span class="hidden-dot">.</span><br> فَــــلاَ خَيَّـبْتُـمُوْا ظَـــنِّيْ ۩ فَحَــاشَاكُمْ وَحَاشَاكُمْ <span class="hidden-dot">.</span><br>سَــعِدْنَـــا إِذْ أَتَيْنــَاكُمْ ۩ وَفُزْنَــا حِيْنَ زُرْنَــــاكُمْ <span class="hidden-dot">.</span><br>فَـقـُوْمُوْا وَاشْفَعُوْا فِيْنَا ۩ إِلَى الرَّحْمٰنِ مَـوْلاَكُمْ <span class="hidden-dot">.</span><br>عَسَى نُحْظَى عَسَى نُعْطَى ۩ مَـزَايـَا مِنْ مَزَايـَاكُمْ<span class="hidden-dot">.</span><br> عَسَى نَظْرَةْ عَسَى رَحْمَـــةْ ۩ تَـغْشَـانَا وَتَـغْشَاكُمْ<span class="hidden-dot">.</span><br> سَــــلاَمُ اللهِ حَـيــَّــاكُـــمْ ۩ وَعـَيْنُ اللهِ تَـرْعَــاكُمْ<span class="hidden-dot">.</span><br> وَصَـــــلَّى اللهُ مـَوْلاَنَـــا ۩ وَسَـــــلَّمَ مَا أَتَـيْنَـــاكُـــــمْ<span class="hidden-dot">.</span><br> عَلَى الْمُخْـتَارِ شَـــافِعِنَــا ۩ وَمُـنْقـِذِنَـا وَإِيَّـــــاكُمْ<span class="hidden-dot">.</span>',
+                    artinya: 'Artinya: "Shalawat ini dibaca saat ziarah kubur para wali Allah, sebagai doa untuk memohon pertolongan, berkah, dan syafaat dari para wali, serta memohon agar diberikan kemudahan dalam segala urusan dan dilindungi dari segala keburukan. Shalawat ini juga memohon agar diberikan kecintaan kepada Rasulullah SAW seperti para wali mencintainya, dan diberikan kemampuan untuk mengikuti jejak mereka dalam kebaikan dan ketaatan."'
+                },
+                'thibbil-qulub': {
+                    title: 'Sholawat Thibbil Qulub',
+                    arabic: 'اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ، طِبّ الْقُلُوْبِ وَدَوَائِهَا، وَعَافِيَةِ الْأَبْدَانِ وَشِفَائِهَا، وَنُوْرِ الْأَبْصَارِ وَضِيَائِهَا، وَقُوْتِ الْأَرْوَاحِ وَغِذَائِهَا، وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمْ',
+                    artinya: 'Artinya: "Ya Allah, berikanlah shalawat kepada junjungan kami Muhammad, penawar hati dan obatnya, kesembulan jasad dan penyembuhnya, cahaya penglihatan dan penerangnya, kekuatan ruh dan makanannya, dan semoga shalawat tercurah kepada keluarga dan para sahabatnya."'
+                },
+                'munjiyat': {
+                    title: 'Sholawat Munjiyat',
+                    arabic: 'اللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى آلِ سَيِّدِنَا مُحَمَّدٍ صَلَاةً تُنْجِيْنِي بِهَا مِنْ جَمِيْعِ الْأَهْوَالِ وَالْآفَاتِ وَتَقْضِيْ لِيْ بِهَا جَمِيْعَ الْحَاجَاتِ وَتُطَهِّرُنِيْ بِهَا مِنْ جَمِيْعِ السَّيِّئَاتِ وَتَرْفَعُنِيْ بِهَا عِنْدَكَ أَعْلَى الدَّرَجَاتِ وَتُبَلِّغُنِيْ بِهَا أَقْصَى الْغَايَاتِ مِنْ جَمِيْعِ الْخَيْرَاتِ فِي الْحَيَاةِ وَبَعْدَ الْمَمَاتِ إِنَّكَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ',
+                    artinya: 'Artinya: "Ya Allah, berikanlah shalawat kepada junjungan kami Muhammad dan kepada keluarga junjungan kami Muhammad, shalawat yang dapat menyelamatkanku dari semua ketakutan dan bencana, memenuhi semua kebutuhanku, mensucikanku dari semua keburukan, mengangkat derajatku di sisi-Mu setinggi-tingginya, dan menggapai puncak dari semua kebaikan baik di dunia maupun setelah mati. Sesungguhnya Engkau Maha Kuasa atas segala sesuatu."'
+                },
+                'fatih': {
+                    title: 'Sholawat Fatih',
+                    arabic: 'اللَّهُمَّ صَلِّ وَسَلِّمْ وَبَارِكْ عَلَى سَيِّدِنَا مُحَمَّدٍ الْفَاتِحِ لِمَا أُغْلِقَ، وَالْخَاتِمِ لِمَا سَبَقَ، وَنَاصِرِ الْحَقِّ بِالْحَقِّ، وَالْهَادِيْ إِلَى صِرَاطِكَ الْمُسْتَقِيْمِ، وَعَلَى آلِهِ وَصَحْبِهِ حَقَّ قَدْرِهِ وَمِقْدَارِهِ الْعَظِيْمِ',
+                    artinya: 'Artinya: "Ya Allah, limpahkan rahmat, keselamatan dan keberkahan kepada junjungan kami Muhammad, yang membuka apa yang tertutup, yang mengakhiri apa yang mendahului, penolong kebenaran dengan kebenaran, dan petunjuk kepada jalan lurus-Mu. Dan semoga tercurah kepada keluarga dan para sahabatnya sesuai dengan kedudukan dan kemuliaan-Nya yang agung."'
+                },
+                'doa-pagi': {
+                    title: 'Doa Pagi Hari',
+                    arabic: 'أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، رَبِّنَا وَرَبُّ كُلِّ شَيْءٍ، لَا إِلَهَ إِلَّا هُوَ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ',
+                    artinya: 'Artinya: "Kami memasuki waktu pagi sedangkan segala kerajaan hanya milik Allah, Tuhan kami dan Tuhan segala sesuatu. Tiada tuhan selain Dia. Bagi-Nya kerajaan dan bagi-Nya pujian. Dia Maha Kuasa atas segala sesuatu. Wahai Tuhan, aku mohon kepada-Mu kebaikan hari ini dan kebaikan setelahnya, dan aku berlindung kepada-Mu dari keburukan hari ini dan keburukan setelahnya."'
+                },
+                'doa-petang': {
+                    title: 'Doa Petang Hari',
+                    arabic: 'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، رَبِّنَا وَرَبُّ كُلِّ شَيْءٍ، لَا إِلَهَ إِلَّا هُوَ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا',
+                    artinya: 'Artinya: "Kami memasuki waktu petang sedangkan segala kerajaan hanya milik Allah, Tuhan kami dan Tuhan segala sesuatu. Tiada tuhan selain Dia. Bagi-Nya kerajaan dan bagi-Nya pujian. Dia Maha Kuasa atas segala sesuatu. Wahai Tuhan, aku mohon kepada-Mu kebaikan malam ini dan kebaikan setelahnya, dan aku berlindung kepada-Mu dari keburukan malam ini dan keburukan setelahnya."'
+                },
+                'doa-perlindungan': {
+                    title: 'Doa Mohon Perlindungan',
+                    arabic: 'بِسْمِ اللهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ',
+                    artinya: 'Artinya: "Dengan nama Allah yang tidak ada sesuatu pun yang membahayakan bersama nama-Nya di bumi maupun di langit, dan Dia Maha Mendengar lagi Maha Mengetahui." (Dibaca 3 kali)'
+                },
+                'doa-setelah-sholat': {
+                    title: 'Doa Setelah Sholat',
+                    arabic: 'اللَّهُمَّ أَعِنِّيْ عَلَى ذِكْرِكَ وَشُكْرِكَ وَحُسْنِ عِبَادَتِكَ',
+                    artinya: 'Artinya: "Ya Allah, bantulah aku untuk mengingat-Mu, bersyukur kepada-Mu, dan memperbaiki ibadahku kepada-Mu."'
+                },
+                'doa-mohon-ampunan': {
+                    title: 'Doa Mohon Ampunan',
+                    arabic: 'رَبَّنَا اغْفِرْ لَنَا ذُنُوبَنَا وَإِسْرَافَنَا فِي أَمْرِنَا وَثَبِّتْ أَقْدَامَنَا وَانْصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ',
+                    artinya: 'Artinya: "Wahai Tuhan kami, ampunilah dosa-dosa kami dan tindakan kami yang melampaui batas dalam urusan kami, teguhkan pendirian kami dan tolonglah kami melawan kaum kafir."'
+                }
+            };
+
+            function openModal(id) {
+                const data = sholawatData[id];
+                if (!data) return;
+
+                const modal = document.getElementById('modal');
+                const modalTitle = document.getElementById('modal-title');
+                const modalContent = document.getElementById('modal-content');
+
+                modalTitle.textContent = data.title;
+                modalContent.innerHTML = `
+                    <div class="bg-blue-50 rounded-lg p-3 sm:p-4 mb-4">
+                        <h3 class="font-semibold text-slate-800 mb-2 sm:mb-3 text-base sm:text-lg">Teks Arab:</h3>
+                        <p id="arabic-text-modal" class="arabic-text text-lg sm:text-xl text-right leading-loose bg-white p-3 sm:p-4 rounded border border-blue-200 transition-all">${data.arabic}</p>
+                    </div>
+                    <div id="translation-section" class="bg-green-50 rounded-lg p-3 sm:p-4 hidden">
+                        <h3 class="font-semibold text-slate-800 mb-2 sm:mb-3 text-base sm:text-lg">Terjemahan:</h3>
+                        <p class="text-slate-700 leading-relaxed text-sm sm:text-base">${data.artinya}</p>
+                    </div>
+                `;
+
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            let currentFontSize = 1; // 1 = normal, 0.8 = kecil, 1.2 = besar
+            let translationVisible = false; // default sembunyikan terjemahan
+
+            function changeFontSize(action) {
+                const arabicText = document.getElementById('arabic-text-modal');
+                const display = document.getElementById('font-size-display');
+                
+                if (action === 'increase') {
+                    if (currentFontSize < 1.4) {
+                        currentFontSize += 0.2;
+                    }
+                } else if (action === 'decrease') {
+                    if (currentFontSize > 0.6) {
+                        currentFontSize -= 0.2;
+                    }
+                }
+                
+                arabicText.style.fontSize = `${1.25 * currentFontSize}rem`;
+                
+                // Update display text
+                if (currentFontSize <= 0.8) {
+                    display.textContent = 'Kecil';
+                } else if (currentFontSize >= 1.2) {
+                    display.textContent = 'Besar';
+                } else {
+                    display.textContent = 'Normal';
+                }
+            }
+
+            function toggleTranslation() {
+                const translationSection = document.getElementById('translation-section');
+                const toggleBtn = document.getElementById('translation-toggle');
+                const toggleText = document.getElementById('translation-text');
+                const toggleIcon = document.getElementById('translation-icon');
+                
+                translationVisible = !translationVisible;
+                
+                if (translationVisible) {
+                    translationSection.classList.remove('hidden');
+                    toggleText.textContent = 'Sembunyikan Terjemahan';
+                    toggleBtn.classList.remove('bg-amber-100', 'text-amber-800');
+                    toggleBtn.classList.add('bg-green-100', 'text-green-800');
+                    
+                    // Change icon to eye-slash
+                    toggleIcon.innerHTML = `
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.94 17.94A10.07 10.07 0 0112 12c0 4.477 2.943 8.268 7 9.542a10.045 10.045 0 01-9.542 7z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.5 12a10.07 10.07 0 011.5 0m0 0a10.07 10.07 0 01-1.5 0"></path>
+                    `;
+                } else {
+                    translationSection.classList.add('hidden');
+                    toggleText.textContent = 'Tampilkan Terjemahan';
+                    toggleBtn.classList.remove('bg-green-100', 'text-green-800');
+                    toggleBtn.classList.add('bg-amber-100', 'text-amber-800');
+                    
+                    // Change icon to eye
+                    toggleIcon.innerHTML = `
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                    `;
+                }
+            }
+
+            function closeModal() {
+                const modal = document.getElementById('modal');
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+
+            function copyModalContent() {
+                const data = sholawatData[getCurrentModalId()];
+                if (!data) return;
+
+                const textToCopy = `${data.title}\n\n${data.arabic}\n\n${data.artinya}`;
+                
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    // Tampilkan notifikasi sukses
+                    showNotification('Teks berhasil disalin!');
+                }).catch(err => {
+                    console.error('Gagal menyalin teks:', err);
+                    showNotification('Gagal menyalin teks');
+                });
+            }
+
+            function getCurrentModalId() {
+                const modalTitle = document.getElementById('modal-title').textContent;
+                for (const [id, data] of Object.entries(sholawatData)) {
+                    if (data.title === modalTitle) {
+                        return id;
+                    }
+                }
+                return null;
+            }
+
+            function showNotification(message) {
+                // Buat notifikasi sederhana
+                const notification = document.createElement('div');
+                notification.className = 'fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-[200] transition-all transform translate-x-0';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                // Hapus notifikasi setelah 3 detik
+                setTimeout(() => {
+                    notification.style.transform = 'translateX(400px)';
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 300);
+                }, 3000);
+            }
+
+            // Tutup modal saat klik di luar modal
+            document.getElementById('modal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            // Tutup modal dengan tombol Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        </script>
+
+        <div class="mt-12 text-center text-slate-600">
+            <p class="text-sm">Semoga Allah menerima amal ibadah kita dan memberikan keberkahan-Nya.</p>
+            <p class="text-sm mt-2">© 2026 PP. Raden Fatah Pekalongan</p>
+        </div>
+    </div>
+</body>
+</html>

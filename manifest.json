@@ -1,7 +1,7 @@
 {
-  "name": "Basyairul Khoirot - PP Raden Fatah",
-  "short_name": "Basyairul",
-  "description": "Kitab Basyairul Khoirot Digital",
+  "name": "Digital - PP Raden Fatah",
+  "short_name": "Raden Rafah",
+  "description": "Kumpulan Kitab Digital",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f8fafc",

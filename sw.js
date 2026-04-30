@@ -2,6 +2,7 @@ const CACHE_NAME = 'basyairul-offline-v7';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
+    './sholawat-doa.html',
     './manifest.json',
     './image_355983.png',
     'https://cdn.tailwindcss.com',
@@ -51,7 +52,7 @@ self.addEventListener('fetch', (event) => {
         }).catch(() => {
             // Fallback jika benar-benar offline dan file tidak ada di cache
             if (event.request.mode === 'navigate') {
-                return caches.match('./index.html');
+                return caches.match('./sholawat-doa.html') || caches.match('./index.html');
             }
         })
     );

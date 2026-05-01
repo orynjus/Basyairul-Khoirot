@@ -187,10 +187,15 @@
                 <span>Instal App</span>
             </button>
 
-            <button onclick="toggleDarkMode()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700 ml-auto">
-                <svg id="moon-icon-landing" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                <svg id="sun-icon-landing" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-            </button>
+            <div class="flex items-center gap-2 ml-auto">
+                <button onclick="toggleDarkMode()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700">
+                    <svg id="moon-icon-landing" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                    <svg id="sun-icon-landing" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                </button>
+                <button onclick="openAboutModal()" class="p-3 text-slate-500 hover:text-emerald-700 dark:text-slate-400 dark:hover:text-emerald-400 transition bg-white/80 dark:bg-slate-800/80 backdrop-blur rounded-full shadow-lg border border-emerald-100 dark:border-slate-700" title="Tentang Aplikasi">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                </button>
+            </div>
         </div>
 
         <div class="w-full max-w-3xl text-center mb-10 relative z-20">
@@ -447,7 +452,34 @@
         </div>
     </div>
 
+    <!-- About Modal -->
+    <div id="about-modal" class="fixed inset-0 bg-black/80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-8 max-w-sm w-full ui-font text-center">
+            <h3 class="text-2xl font-bold text-emerald-800 dark:text-emerald-400 mb-4">Tentang Aplikasi</h3>
+            <p class="text-slate-700 dark:text-slate-300 mb-6 text-base leading-relaxed">Aplikasi ini dibuat sebagai bentuk kebanggaan kami kepada Pondok Pesantren Raden Fatah Talun.</p>
+            <button onclick="closeAboutModal()" class="w-full bg-emerald-700 hover:bg-emerald-600 dark:bg-emerald-600 dark:hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition">Tutup</button>
+        </div>
+    </div>
     <script>
+                // 0. PULL TO REFRESH
+        let touchStartY = 0;
+        let isRefreshing = false;
+        
+        document.addEventListener('touchstart', (e) => {
+            if (window.pageYOffset === 0) {
+                touchStartY = e.touches[0].clientY;
+            }
+        }, false);
+        
+        document.addEventListener('touchmove', (e) => {
+            if (isRefreshing) return;
+            
+            if (window.pageYOffset === 0 && e.touches[0].clientY > touchStartY + 100) {
+                isRefreshing = true;
+                location.reload();
+            }
+        }, false);
+
         // 1. UI NAVIGATION
         let currentFontSize = window.innerWidth < 640 ? 1.25 : 1.5;
         let isDarkMode = false;
@@ -474,6 +506,16 @@
             document.body.classList.toggle('dark-mode'); 
             document.querySelectorAll('#moon-icon, #moon-icon-landing').forEach(el => el.classList.toggle('hidden', isDarkMode)); 
             document.querySelectorAll('#sun-icon, #sun-icon-landing').forEach(el => el.classList.toggle('hidden', !isDarkMode)); 
+        }
+       
+        function openAboutModal() {
+            document.getElementById('about-modal').classList.remove('hidden');
+            document.getElementById('about-modal').classList.add('flex');
+        }
+        
+        function closeAboutModal() {
+            document.getElementById('about-modal').classList.add('hidden');
+            document.getElementById('about-modal').classList.remove('flex');
         }
 
         // 2. PWA OFFLINE LOGIC

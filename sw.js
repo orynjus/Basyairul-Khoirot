@@ -1,8 +1,10 @@
-const CACHE_NAME = 'basyairul-offline-v7';
+const CACHE_NAME = 'basyairul-offline-v8';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
     './sholawat-doa.html',
+    './ringkasan-ngaji.html',
+    './doa-ijazah.html',
     './manifest.json',
     './image_355983.png',
     'https://cdn.tailwindcss.com',

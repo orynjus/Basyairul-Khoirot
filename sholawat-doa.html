@@ -27,48 +27,25 @@
             font-size: 0 !important;
             line-height: 0 !important;
         }
-        /* Pull to Refresh Styles */
-        .pull-to-refresh {
-            position: fixed;
-            top: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #3b82f6;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            z-index: 1000;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            opacity: 0;
-            pointer-events: none;
-        }
-        .pull-to-refresh.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .pull-to-refresh-icon {
-            display: inline-block;
-            margin-right: 8px;
-            transition: transform 0.3s ease;
-        }
-        .pull-to-refresh.pulling .pull-to-refresh-icon {
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
-</head>
-<body class="bg-slate-50 min-h-screen text-slate-900">
-    <!-- Pull to Refresh Indicator -->
-    <div id="pull-to-refresh" class="pull-to-refresh">
-        <span class="pull-to-refresh-icon">↓</span>
-        <span class="pull-text">Tarik ke bawah untuk refresh</span>
-    </div>
-    
+                       // 0. PULL TO REFRESH
+        let touchStartY = 0;
+        let isRefreshing = false;
+        
+        document.addEventListener('touchstart', (e) => {
+            if (window.pageYOffset === 0) {
+                touchStartY = e.touches[0].clientY;
+            }
+        }, false);
+        
+        document.addEventListener('touchmove', (e) => {
+            if (isRefreshing) return;
+            
+            if (window.pageYOffset === 0 && e.touches[0].clientY > touchStartY + 100) {
+                isRefreshing = true;
+                location.reload();
+            }
+        }, false);
+                
     <div class="max-w-4xl mx-auto py-8 px-4">
         <a href="index.html" class="inline-block mb-6 text-blue-700 hover:underline font-bold">&larr; Kembali</a>
         <h1 class="text-3xl font-bold mb-4 text-blue-800 text-center">Sholawat & Doa</h1>

@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do'a & Ijazah</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        };
+        (function() {
+            var theme = localStorage.getItem('theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (theme === 'dark' || (!theme && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -16,35 +30,83 @@
             font-display: swap;
         }
         .arabic-text { font-family: 'LPMQ IsepMisbah', serif; }
+
+        /* Pure Deep Black / AMOLED Dark Mode */
+        html.dark, html.dark body {
+            background-color: #000000 !important;
+            color: #f1f5f9 !important;
+        }
+        html.dark .bg-slate-50 {
+            background-color: #000000 !important;
+        }
+        html.dark .bg-white {
+            background-color: #0d0d0f !important;
+            color: #f8fafc !important;
+            border-color: #222222 !important;
+        }
+        html.dark .border-slate-300 {
+            border-color: #262626 !important;
+        }
+        html.dark .text-slate-600 {
+            color: #94a3b8 !important;
+        }
+        html.dark [contenteditable="true"] {
+            background-color: #121215 !important;
+            color: #f8fafc !important;
+            border-color: #262626 !important;
+        }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-900">
+<body class="bg-slate-50 min-h-screen text-slate-900 transition-colors duration-300">
     <div class="max-w-2xl mx-auto py-8 px-4">
-        <a href="index.html" class="inline-block mb-6 text-emerald-700 hover:underline font-bold">&larr; Kembali</a>
-        <h1 class="text-3xl font-bold mb-4 text-emerald-800">Do'a & Ijazah</h1>
+        <div class="flex items-center justify-between mb-6">
+            <a href="index.html" class="inline-flex items-center text-emerald-700 dark:text-emerald-400 hover:underline font-bold">
+                &larr; Kembali
+            </a>
+            <button onclick="toggleTheme()" class="p-2.5 rounded-full bg-white dark:bg-[#151515] text-slate-700 dark:text-neutral-300 shadow-md border border-slate-200 dark:border-neutral-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition" title="Ganti Mode Gelap/Terang">
+                <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+        </div>
+        <h1 class="text-3xl font-bold mb-4 text-emerald-800 dark:text-emerald-400">Do'a & Ijazah</h1>
         <div class="space-y-6" id="doa-list">
             <!-- Doa/Ijazah akan di-generate di sini -->
         </div>
     </div>
 <script>
+function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
 const API_URL = "https://script.google.com/macros/s/AKfycbz_tivmXFcFYiRDFNdptORrkdifdKzFlBmFaTb387uA5xn7dx4CE9_1KVaMaQNEkDR4Xw/exec?sheet=Sheet2";
 const doaList = document.getElementById('doa-list');
-let doaData = [
+
+// Caching lokal untuk pemuatan instan
+let cached = localStorage.getItem('cached_doa_data');
+let doaData = cached ? JSON.parse(cached) : [
     {judul: "", isi: ""},
     {judul: "", isi: ""}
 ];
+
+// Render instan dari cache lokal
+renderDoa();
 
 // Render semua doa/ijazah
 function renderDoa() {
     doaList.innerHTML = "";
     doaData.forEach((item, idx) => {
         const div = document.createElement('div');
-        div.className = "bg-white rounded-xl shadow p-5";
+        div.className = "bg-white dark:bg-[#0d0d0f] rounded-xl shadow-md border border-slate-200 dark:border-neutral-800 p-5 transition-colors";
         div.innerHTML = `
-            <label class="block text-sm font-semibold text-slate-600 mb-1">Do'a / Ijazah:</label>
-            <div contenteditable="true" class="judul border border-slate-300 rounded px-3 py-2 min-h-[2.5rem] focus:outline-none focus:ring-2 focus:ring-emerald-400 mb-3" data-idx="${idx}" placeholder="Tulis judul atau keterangan di sini...">${item.judul}</div>
-            <label class="block text-sm font-semibold text-slate-600 mb-1">Keterangan isi Do'a / Ijazah :</label>
-            <div contenteditable="true" class="isi border border-slate-300 rounded px-3 py-2 min-h-[4rem] focus:outline-none focus:ring-2 focus:ring-emerald-400" data-idx="${idx}" placeholder="Tulis isi do'a atau ijazah di sini...">${item.isi}</div>
+            <label class="block text-sm font-semibold text-slate-600 dark:text-neutral-400 mb-1">Do'a / Ijazah:</label>
+            <div contenteditable="true" class="judul border border-slate-300 dark:border-neutral-700 rounded px-3 py-2 min-h-[2.5rem] focus:outline-none focus:ring-2 focus:ring-emerald-400 mb-3" data-idx="${idx}" placeholder="Tulis judul atau keterangan di sini...">${item.judul}</div>
+            <label class="block text-sm font-semibold text-slate-600 dark:text-neutral-400 mb-1">Keterangan isi Do'a / Ijazah :</label>
+            <div contenteditable="true" class="isi border border-slate-300 dark:border-neutral-700 rounded px-3 py-2 min-h-[4rem] focus:outline-none focus:ring-2 focus:ring-emerald-400" data-idx="${idx}" placeholder="Tulis isi do'a atau ijazah di sini...">${item.isi}</div>
         `;
         doaList.appendChild(div);
     });
@@ -61,7 +123,7 @@ function renderDoa() {
     });
 }
 
-// Ambil data dari Google Sheets Sheet2 saat halaman dibuka
+// Ambil data terbaru dari Google Sheets di latar belakang
 fetch(API_URL)
   .then(res => res.json())
   .then(data => {
@@ -70,37 +132,42 @@ fetch(API_URL)
         judul: row[0] || "",
         isi: row[1] || ""
       }));
-      renderDoa();
-    } else {
+      localStorage.setItem('cached_doa_data', JSON.stringify(doaData));
       renderDoa();
     }
+  }).catch(err => {
+      console.log('Mode offline atau fetch gagal, menggunakan cache lokal:', err);
   });
 
-// Tombol tambah doa/ijazah
-document.getElementById('addBtn').onclick = function() {
-    doaData.push({judul: "", isi: ""});
-    renderDoa();
-};
+// Tombol tambah doa/ijazah (jika elemen ada)
+const addBtn = document.getElementById('addBtn');
+if (addBtn) {
+    addBtn.onclick = function() {
+        doaData.push({judul: "", isi: ""});
+        renderDoa();
+    };
+}
 
-// Tombol simpan
-document.getElementById('saveBtn').onclick = function() {
-  // Ambil data terbaru dari DOM
-  document.querySelectorAll('.judul').forEach(el => {
-    doaData[el.dataset.idx].judul = el.innerText;
-  });
-  document.querySelectorAll('.isi').forEach(el => {
-    doaData[el.dataset.idx].isi = el.innerText;
-  });
-  // Siapkan data untuk dikirim
-  const data = doaData.map(item => [item.judul, item.isi]);
-  fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {"Content-Type": "application/json"}
-  })
-  .then(res => res.text())
-  .then(txt => alert("Berhasil disimpan!"));
-};
+// Tombol simpan (jika elemen ada)
+const saveBtn = document.getElementById('saveBtn');
+if (saveBtn) {
+    saveBtn.onclick = function() {
+        document.querySelectorAll('.judul').forEach(el => {
+            doaData[el.dataset.idx].judul = el.innerText;
+        });
+        document.querySelectorAll('.isi').forEach(el => {
+            doaData[el.dataset.idx].isi = el.innerText;
+        });
+        const data = doaData.map(item => [item.judul, item.isi]);
+        fetch(API_URL, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {"Content-Type": "application/json"}
+        })
+        .then(res => res.text())
+        .then(txt => alert("Berhasil disimpan!"));
+    };
+}
 </script>
 </body>
 </html>

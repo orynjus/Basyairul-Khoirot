@@ -1,4 +1,4 @@
-const CACHE_NAME = 'basyairul-offline-v8';
+const CACHE_NAME = 'basyairul-offline-v9';
 const ASSETS_TO_CACHE = [
     './',
     './index.html',
@@ -7,6 +7,7 @@ const ASSETS_TO_CACHE = [
     './doa-ijazah.html',
     './manifest.json',
     './image_355983.png',
+    './lpmq.ttf',
     'https://cdn.tailwindcss.com',
     'https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;600;700&display=swap'
 ];
@@ -54,8 +55,9 @@ self.addEventListener('fetch', (event) => {
         }).catch(() => {
             // Fallback jika benar-benar offline dan file tidak ada di cache
             if (event.request.mode === 'navigate') {
-                return caches.match('./sholawat-doa.html') || caches.match('./index.html');
+                return caches.match('./index.html') || caches.match('./sholawat-doa.html');
             }
         })
     );
+});
 });
